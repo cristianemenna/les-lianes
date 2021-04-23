@@ -11,5 +11,11 @@ import Collective from './le-collectif.vue'
     Collective,
   }
 })
-export default class Index extends Vue {}
+export default class Index extends Vue {
+  public head() {
+    return {
+      script: [{ src: 'https://identity.netlify.com/v1/netlify-identity-widget.js' }],
+    };
+  }
+}
 </script>
