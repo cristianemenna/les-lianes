@@ -1,11 +1,10 @@
 <template lang="pug">
-  div
-    Collective
+  Collective
 </template>
 
 <script lang="ts">
 import { Vue, Component } from 'vue-property-decorator';
-import Collective from './les-lianes.vue'
+import Collective from './le-collectif.vue'
 
 @Component({
   components: {
@@ -14,8 +13,3 @@ import Collective from './les-lianes.vue'
 })
 export default class Index extends Vue {}
 </script>
-
-<style lang="less" scoped>
-
-
-</style>
