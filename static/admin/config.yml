@@ -19,3 +19,4 @@ collections:
       - { label: 'Date de publication', name: 'date', widget: 'datetime' }
       - { label: 'Description', name: 'description', widget: 'string' }
       - { label: 'Contenu', name: 'body', widget: 'markdown' }
+      - { label: 'Publié par', name: 'author', widget: 'string' }

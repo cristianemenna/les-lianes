@@ -16,6 +16,10 @@ export default {
     ]
   },
 
+  css: [
+    '@/assets/less/commons.less',
+  ],
+
   components: true,
 
   buildModules: [
@@ -25,18 +29,5 @@ export default {
   modules: [
     '@nuxt/content'
   ],
-
-  generate: {
-    routes: function() {
-      const fs = require('fs');
-      const path = require('path');
-      return fs.readdirSync('./content/portfolio').map(file => {
-        return {
-          route: `/${path.parse(file).name}`,
-          payload: require(`./content/portfolio/${file}`),
-        };
-      });
-    },
-  },
 
 }
