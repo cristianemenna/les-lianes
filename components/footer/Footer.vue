@@ -1,5 +1,9 @@
 <template lang="pug">
   .footer
+    ul
+      li Les Lianes
+      li © 2020
+
 </template>
 
 <script lang="ts">
@@ -11,8 +15,20 @@ export default class Footer extends Vue {}
 
 <style lang="less" scoped>
 .footer {
-  height: 80px;
-  background-color: cadetblue;
-  color: white
+  height: 120px;
+  background-color: #FFFFFF;
+  color: #000000;
+  display: grid;
+  align-content: center;
+  justify-content: center;
+}
+
+ul {
+  display: grid;
+  grid-auto-flow: column;
+  grid-gap: 15px;
+  li {
+    list-style: none;
+  }
 }
 </style>
