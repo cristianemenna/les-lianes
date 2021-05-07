@@ -2,7 +2,7 @@
   .footer
     ul
       li Les Lianes
-      li © 2020
+      li © {{ currentYear }}
 
 </template>
 
@@ -10,7 +10,13 @@
 import { Vue, Component } from 'vue-property-decorator';
 
 @Component
-export default class Footer extends Vue {}
+export default class Footer extends Vue {
+
+  get currentYear() {
+    return new Date().getFullYear();
+  }
+  
+}
 </script>
 
 <style lang="less" scoped>
