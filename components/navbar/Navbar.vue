@@ -3,7 +3,8 @@
     .navbar-content
       ul
         li
-          img(id="logo" src="~/assets/img/logo.png")
+          a(href="/accueil")
+            img(id="logo" src="~/assets/img/logo.png")
         li
           a(href="/nos-publications") Nos publications
         li
