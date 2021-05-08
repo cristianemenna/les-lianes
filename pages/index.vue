@@ -49,7 +49,7 @@ export default class Index extends Vue {
 }
 
 /deep/ .navbar {
-  background-color: unset;
+  background: transparent;
   z-index: 1;
   a {
     color: #ffffff;
