@@ -6,9 +6,9 @@
           a(href="/accueil")
             img(id="logo" src="~/assets/img/logo.png")
         li
-          a(href="/nos-publications" :class="{ selected : portfolio }") Nos publications
-        li
           a(href="/le-collectif" :class="{ selected : collective }") Le collectif
+        li
+          a(href="/nos-publications" :class="{ selected : portfolio }") Nos publications
 </template>
 
 <script lang="ts">
@@ -17,22 +17,21 @@ import { Vue, Component } from "vue-property-decorator";
 @Component({
   props: {
     portfolio: Boolean,
-    collective: Boolean,
+    collective: Boolean
   }
 })
 export default class Navbar extends Vue {
-
   public mounted() {
-    window.addEventListener('scroll', () => {
-      const navbar = document.querySelector('.navbar') as HTMLElement;
+    window.addEventListener("scroll", () => {
+      const navbar = document.querySelector(".navbar") as HTMLElement;
       if (scrollY > 90) {
-        navbar.style.boxShadow = '0 -2px 4px 1px rgba(0, 0, 0, 0.5)';
+        navbar.style.boxShadow = "0 -2px 4px 1px rgba(0, 0, 0, 0.5)";
       }
 
       if (scrollY === 0) {
-        navbar.style.boxShadow = 'unset';
+        navbar.style.boxShadow = "unset";
       }
-    })
+    });
   }
 }
 </script>
@@ -44,7 +43,7 @@ export default class Navbar extends Vue {
   position: sticky;
   top: 0;
   color: #000000;
-  background-color: #FFFFFF;
+  background-color: #ffffff;
   display: flex;
   align-items: center;
 }
@@ -58,7 +57,6 @@ ul {
   display: grid;
   grid-auto-flow: column;
   grid-template-columns: 6fr 1fr 1fr;
-  grid-gap: 10px;
   align-items: center;
   li {
     list-style: none;
@@ -68,6 +66,9 @@ ul {
       &.selected {
         padding-bottom: 4px;
         border-bottom: 3px solid #228782;
+      }
+      &:hover {
+        color: #228782;
       }
     }
   }

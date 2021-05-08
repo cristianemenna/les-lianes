@@ -40,7 +40,7 @@ export default class Index extends Vue {
   grid-template-columns: 2fr 1.2fr 200px;
   place-content: center;
   background: #000000;
-  background-image: url("~/assets/img/home2.jpg");
+  background-image: url("~/assets/img/home.jpg");
   background-position: center;
   background-size: cover;
   filter: brightness(0.7);

@@ -34,5 +34,5 @@ collections:
     fields:
       - { label: 'Nom/Prénom', name: 'fullName', widget: 'string' }
       - { label: 'Fonction', name: 'role', widget: 'string' }
-      - { label: 'Description de l'image', name: 'avatarAlt', widget: 'string' }
+      - { label: 'Description image', name: 'avatarAlt', widget: 'string' }
       - { label: 'Image de profil', name: 'avatar', widget: 'image' }
