@@ -6,15 +6,20 @@
           a(href="/accueil")
             img(id="logo" src="~/assets/img/logo.png")
         li
-          a(href="/nos-publications") Nos publications
+          a(href="/nos-publications" :class="{ selected : portfolio }") Nos publications
         li
-          a(href="/le-collectif") Le collectif
+          a(href="/le-collectif" :class="{ selected : collective }") Le collectif
 </template>
 
 <script lang="ts">
 import { Vue, Component } from "vue-property-decorator";
 
-@Component
+@Component({
+  props: {
+    portfolio: Boolean,
+    collective: Boolean,
+  }
+})
 export default class Navbar extends Vue {
 
   public mounted() {
@@ -60,6 +65,10 @@ ul {
     a {
       text-decoration: none;
       color: black;
+      &.selected {
+        padding-bottom: 4px;
+        border-bottom: 3px solid #228782;
+      }
     }
   }
 }
