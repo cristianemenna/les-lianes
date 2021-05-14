@@ -7,21 +7,21 @@
 </template>
 
 <script lang="ts">
-import { Vue, Component } from 'vue-property-decorator';
+import { Vue, Component } from "vue-property-decorator";
 
 @Component
 export default class Footer extends Vue {
-
   get currentYear() {
     return new Date().getFullYear();
   }
-
 }
 </script>
 
 <style lang="less" scoped>
 .footer {
+  width: 100%;
   height: 120px;
+  bottom: 0;
   background-color: #FFFFFF;
   color: #000000;
   display: grid;
