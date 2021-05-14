@@ -28,11 +28,13 @@ collections:
     folder: 'content/collective'
     format: 'frontmatter'
     create: true
-    slug: '{{slug}}'
+    slug: '{{fullName}}'
     editor:
       preview: false
     fields:
       - { label: 'Nom/Prénom', name: 'fullName', widget: 'string' }
       - { label: 'Fonction', name: 'role', widget: 'string' }
+      - { label: 'Texte de présentation', name: 'description', widget: 'string' }
+      - { label: 'Mail', name: 'email', widget: 'string' }
       - { label: 'Description image', name: 'avatarAlt', widget: 'string' }
       - { label: 'Image de profil', name: 'avatar', widget: 'image' }

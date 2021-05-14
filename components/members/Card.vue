@@ -21,9 +21,10 @@ export default class Card extends Vue {}
 
 <style lang="less" scoped>
 .card {
+  height: 100%;
   display: grid;
   grid-auto-flow: row;
-  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
   grid-gap: 10px;
   padding: 10px;
   border-radius: 10px;

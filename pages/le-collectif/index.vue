@@ -11,12 +11,14 @@
           p Les lianes, comme les liens qui nous unissent, également. Le collectif a germé le 13 avril 2019, lors des premiers États généraux des femmes journalistes, à Paris. Cette journée nous a donné envie de se rassembler entre pigistes féministes et solidaires. Et de poursuivre ensemble notre travail.
       .members-container
         template(v-for="member of collective")
-          Card(
-            :avatar="member.avatar"
-            :avatarAlt="member.avatarAlt"
-            :fullName="member.fullName",
-            :profession="member.role"
-          )
+          a(:href="'/le-collectif/' + member.slug")
+            Card(
+              :key="member.slug"
+              :avatar="member.avatar"
+              :avatarAlt="member.avatarAlt"
+              :fullName="member.fullName",
+              :profession="member.role"
+            )
     Footer
 </template>
 
