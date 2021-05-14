@@ -4,17 +4,17 @@
     .main-container
       .member-container
         .member-avatar
-          img(:src="collective.avatar" :alt="collective.avatarAlt")
+          img(:src="member.avatar" :alt="member.avatarAlt")
         .member-presentation
-          h1 {{ collective.fullName }}
-          p.member-role {{ collective.role }}
-          p.member-presentation {{ collective.description }}
-          p Contact : {{ collective.email }}
+          h1 {{ member.fullName }}
+          p.member-role {{ member.role }}
+          p.member-presentation {{ member.description }}
+          p Contact : {{ member.email }}
       .member-portfolio
         h2 Publications
         p testing
     Footer
-      nuxt-content(:document="collective")
+      nuxt-content(:document="member")
 </template>
 
 <script>
@@ -27,15 +27,15 @@ export default {
     Navbar
   },
   async asyncData({ $content, params, error }) {
-    let collective;
+    let member;
     try {
-      collective = await $content("collective", params.slug).fetch();
+      member = await $content("collective", params.slug).fetch();
     } catch (e) {
       error({ message: "Member not found" });
     }
 
     return {
-      collective
+      member
     };
   }
 };
