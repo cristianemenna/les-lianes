@@ -23,14 +23,14 @@
 <script>
 import { Vue, Component } from "vue-property-decorator";
 import Card from "../../components/members/Card.vue";
-import Footer from '../../components/footer/Footer.vue';
-import Navbar from '../../components/navbar/Navbar.vue';
+import Footer from "../../components/footer/Footer.vue";
+import Navbar from "../../components/navbar/Navbar.vue";
 
 export default {
   components: {
     Card,
     Footer,
-    Navbar,
+    Navbar
   },
 
   async asyncData({ $content, params, error }) {
@@ -41,39 +41,56 @@ export default {
       error({ message: "Member not found" });
     }
 
+    collective = collective.sort((m1, m2) => {
+      const member1 = m1.fullName
+        .toUpperCase()
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "");
+      const member2 = m2.fullName
+        .toUpperCase()
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "");
+      return member1 < member2 ? -1 : member1 > member2 ? 1 : 0;
+    });
+
     return {
-      collective,
+      collective
     };
   },
 };
 </script>
 
 <style lang="less" scoped>
+.collective {
+  display: grid;
+  justify-content: center;
+}
 
 .main-container {
   display: grid;
   grid-auto-flow: row;
-  grid-gap: 100px;
+  grid-gap: 150px;
   place-items: center;
 }
 
 .members-container {
   display: grid;
   grid-auto-flow: column;
-  grid-gap: 50px;
+  grid-gap: 30px;
 }
 
 .collective-container {
   display: grid;
   grid-auto-flow: column;
-  grid-template-columns: 1fr 3fr;
-  grid-gap: 50px;
+  grid-template-columns: 450px auto;
+  grid-gap: 30px;
+  align-items: center;
+  text-align: justify;
 
   img {
-    width: 500px;
+    width: 100%;
     box-shadow: 1px 1px 4px 1px rgba(0, 0, 0, 0.2);
     border-radius: 10px;
   }
 }
-
 </style>

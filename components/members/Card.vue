@@ -21,7 +21,6 @@ export default class Card extends Vue {}
 
 <style lang="less" scoped>
 .card {
-  width: 200px;
   display: grid;
   grid-auto-flow: row;
   grid-gap: 10px;

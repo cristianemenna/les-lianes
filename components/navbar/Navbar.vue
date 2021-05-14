@@ -26,6 +26,7 @@ export default class Navbar extends Vue {
       const navbar = document.querySelector(".navbar") as HTMLElement;
       if (scrollY > 90) {
         navbar.style.boxShadow = "0 -2px 4px 1px rgba(0, 0, 0, 0.5)";
+        navbar.style.width = "100vw"
       }
 
       if (scrollY === 0) {
@@ -38,7 +39,7 @@ export default class Navbar extends Vue {
 
 <style lang="less" scoped>
 .navbar {
-  width: 100%;
+  width: 100vw;
   height: 150px;
   position: sticky;
   top: 0;
@@ -49,15 +50,16 @@ export default class Navbar extends Vue {
 }
 
 .navbar-content {
-  width: 1300px;
+  width: 1000px;
   margin: 0 auto;
 }
 
 ul {
   display: grid;
   grid-auto-flow: column;
-  grid-template-columns: 6fr 1fr 1fr;
+  grid-template-columns: 5fr 1fr 1fr;
   align-items: center;
+  padding: 0;
   li {
     list-style: none;
     a {
@@ -75,6 +77,6 @@ ul {
 }
 
 #logo {
-  width: 250px;
+  width: 200px;
 }
 </style>

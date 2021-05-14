@@ -15,7 +15,7 @@ export default class Footer extends Vue {
   get currentYear() {
     return new Date().getFullYear();
   }
-  
+
 }
 </script>
 
