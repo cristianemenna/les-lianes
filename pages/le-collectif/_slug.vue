@@ -11,43 +11,50 @@
           p.member-presentation {{ member.description }}
           p Contact : {{ member.email }}
       .member-portfolio
-        h2 Publications
-        p testing
+        Portfolio(:portfolio="portfolio")
     Footer
-      nuxt-content(:document="member")
 </template>
 
 <script>
 import Footer from "../../components/footer/Footer.vue";
 import Navbar from "../../components/navbar/Navbar.vue";
+import Portfolio from "../../components/portfolio/Portfolio.vue";
 
 export default {
   components: {
     Footer,
-    Navbar
+    Navbar,
+    Portfolio
   },
   async asyncData({ $content, params, error }) {
     let member;
+    let portfolio;
     try {
       member = await $content("collective", params.slug).fetch();
+      portfolio = await $content("portfolio")
+        .where({
+          author: {
+            $eq: member.fullName
+          }
+        })
+        .fetch();
     } catch (e) {
-      error({ message: "Member not found" });
+      error({ message: e });
     }
 
     return {
-      member
+      member,
+      portfolio
     };
   }
 };
 </script>
 
 <style lang="less" scoped>
-
 .main-container {
   display: grid;
   grid-auto-flow: row;
-  grid-template-rows: 1fr 1fr;
-  grid-gap: 100px;
+  grid-gap: 150px;
 }
 
 .member-container {
@@ -72,6 +79,7 @@ export default {
     p {
       text-align: justify;
       &.member-role {
+        font-family: 'Raleway Bold';
         font-style: italic;
       }
       &.member-presentation {
