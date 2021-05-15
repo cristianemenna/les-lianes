@@ -1,6 +1,6 @@
 <template lang="pug">
   .les-lianes
-    Navbar
+    Navbar(home)
     .main-container
       .intro-card
         p Nous sommes un collectif de cinq journalistes et photographes.

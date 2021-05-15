@@ -4,7 +4,8 @@
       ul
         li
           a(href="/accueil")
-            img(id="logo" src="~/assets/img/logo.png")
+            img(v-if="home" id="logo" src="~/assets/img/logo.svg")
+            img(v-else id="logo" src="~/assets/img/logo.png")
         li
           a(href="/le-collectif" :class="{ selected : collective }") Le collectif
         li
@@ -17,7 +18,8 @@ import { Vue, Component } from "vue-property-decorator";
 @Component({
   props: {
     portfolio: Boolean,
-    collective: Boolean
+    collective: Boolean,
+    home: Boolean,
   }
 })
 export default class Navbar extends Vue {
