@@ -1,11 +1,12 @@
 <template lang="pug">
   .les-lianes
     Navbar(home)
-    .main-container
-      .intro-card
-        p Nous sommes un collectif de cinq journalistes et photographes.
-        p Nos domaines de prédilection sont la politique internationale, les féministes, l'environnement.
-        a(href="/accueil") Entrer
+    .main
+      .main-container
+        a(href="/le-collectif")
+          .main-presentation
+            h1 Collectif Les Lianes
+            p Collectif de cinq journalistes et photographes. Nos domaines de prédilection sont la politique internationale, les féministes, l'environnement.
 </template>
 
 <script lang="ts">
@@ -30,18 +31,13 @@ export default class Index extends Vue {
 </script>
 
 <style lang="less" scoped>
-.main-container {
+.main {
   position: absolute;
   top: 0;
   width: 100vw;
   height: 100vh;
-  display: grid;
-  grid-auto-flow: column;
-  grid-template-columns: 2fr 1.2fr 200px;
-  place-content: center;
   background: #000000;
-  background-image: url("~/assets/img/home.jpg");
-  background-position: center;
+  background-image: url("~/assets/img/home3.png");
   background-size: cover;
   filter: brightness(0.7);
 }
@@ -54,28 +50,33 @@ export default class Index extends Vue {
   }
 }
 
-.intro-card {
-  height: fit-content;
-  min-height: 200px;
-  grid-column: 2;
+.main-container {
   display: grid;
-  grid-auto-flow: row;
-  grid-template-rows: 1fr 1fr 1fr;
-  grid-gap: 15px;
-  justify-items: start;
-  padding: 40px;
-  margin-right: 100px;
-  background-color: rgba(255, 255, 255, 0.6);
-  border-radius: 30px;
-  box-shadow: 1px 1px 4px 1px rgba(0, 0, 0, 0.2);
-  p {
-    font-size: 1.2em;
-  }
+  grid-auto-flow: column;
+  grid-template-columns: 1fr 2fr 1.5fr;
+  place-items: center;
   a {
-    align-self: center;
-    justify-self: center;
+    grid-column: 3;
+    @media only screen and (max-width: 1000px) {
+      grid-column: 1 / span 2;
+    }
+  }
+}
+
+.main-presentation {
+  background-color: rgba(211, 211, 211, 0.3);
+  box-shadow: 1px 1px 4px 1px rgba(0, 0, 0, 0.1);
+  padding: 5px 25px;
+  border-radius: 5px;
+  h1 {
     color: #000000;
-    text-transform: uppercase;
+    font-family: "Raleway Bold";
+    filter: brightness(7.9);
+  }
+  p {
+    margin: 25px 0;
+    font-size: 15px;
+    text-align: center;
   }
 }
 </style>

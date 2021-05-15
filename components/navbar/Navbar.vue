@@ -3,7 +3,7 @@
     .navbar-content
       ul
         li
-          a(href="/accueil")
+          a(href="/")
             img(v-if="home" id="logo" src="~/assets/img/logo.svg")
             img(v-else id="logo" src="~/assets/img/logo.png")
         li
