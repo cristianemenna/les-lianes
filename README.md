@@ -1,20 +1,5 @@
-# les-lianes
-
-## Build Setup
-
-```bash
-# install dependencies
-$ npm install
-
-# serve with hot reload at localhost:3000
-$ npm run dev
-
-# build for production and launch server
-$ npm run build
-$ npm run start
-
-# generate static project
-$ npm run generate
-```
-
-For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
+<p>
+  <img src="https://user-images.githubusercontent.com/48241779/118368189-0ea5ac00-b5a2-11eb-8cb7-e31436840567.png" alt="DOMMA" width="25%">
+	 is a presentation web site for a french collective of journalists.
+	Developed with Nuxtjs, Vuejs, Typescript and Netlify CMS.
+</p>
