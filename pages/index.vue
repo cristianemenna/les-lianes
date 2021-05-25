@@ -39,13 +39,18 @@ export default class Index extends Vue {
   background: #000000;
   background-image: url("~/assets/img/home3.png");
   background-size: cover;
-  filter: brightness(0.7);
+  // filter: brightness(0.7);
 }
 
 /deep/ .navbar {
-  background: transparent;
+  // background: transparent;
+  background-color: rgba(0, 0, 0, 0.7);
+  // box-shadow: 1px 1px 4px 1px rgba(0, 0, 0, 0.2);
+  // background-color: #000000;
+  height: 100px;
   z-index: 1;
   a {
+    font-size: 16px;
     color: #ffffff;
   }
 }
@@ -64,16 +69,18 @@ export default class Index extends Vue {
 }
 
 .main-presentation {
-  background-color: rgba(211, 211, 211, 0.3);
+  background-color: rgba(0, 0, 0, 0.7);
+  // background-color: rgba(211, 211, 211, 0.3);
   box-shadow: 1px 1px 4px 1px rgba(0, 0, 0, 0.1);
   padding: 5px 25px;
   border-radius: 5px;
   h1 {
-    color: #000000;
+    color: #ffffff;
     font-family: "Raleway Bold";
     filter: brightness(7.9);
   }
   p {
+    color: #ffffff;
     margin: 25px 0;
     font-size: 15px;
     text-align: center;
