@@ -1,6 +1,6 @@
 <template lang="pug">
   .les-lianes
-    Navbar(home)
+    Navbar
     .main
       .main-container
         a(href="/le-collectif")
@@ -37,21 +37,16 @@ export default class Index extends Vue {
   width: 100vw;
   height: 100vh;
   background: #000000;
-  background-image: url("~/assets/img/home3.png");
+  background-image: url("~/assets/img/home.jpg");
   background-size: cover;
-  // filter: brightness(0.7);
 }
 
 /deep/ .navbar {
-  // background: transparent;
-  background-color: rgba(0, 0, 0, 0.7);
-  // box-shadow: 1px 1px 4px 1px rgba(0, 0, 0, 0.2);
-  // background-color: #000000;
+  background-color: rgba(255, 255, 255, 0.5);
   height: 100px;
   z-index: 1;
   a {
-    font-size: 16px;
-    color: #ffffff;
+    font-size: 15px;
   }
 }
 
@@ -69,21 +64,20 @@ export default class Index extends Vue {
 }
 
 .main-presentation {
-  background-color: rgba(0, 0, 0, 0.7);
-  // background-color: rgba(211, 211, 211, 0.3);
+  background-color: rgba(255, 255, 255, 0.5);
   box-shadow: 1px 1px 4px 1px rgba(0, 0, 0, 0.1);
-  padding: 5px 25px;
+  padding: 15px 30px;
   border-radius: 5px;
+  text-align: center;
   h1 {
-    color: #ffffff;
+    color: #000000;
     font-family: "Raleway Bold";
+    font-size: 27px;
     filter: brightness(7.9);
   }
   p {
-    color: #ffffff;
     margin: 25px 0;
-    font-size: 15px;
-    text-align: center;
+    font-size: 16px;
   }
 }
 </style>

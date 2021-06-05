@@ -4,8 +4,7 @@
       ul
         li
           a(href="/")
-            img(v-if="home" id="logo" src="~/assets/img/logo.svg")
-            img(v-else id="logo" src="~/assets/img/logo.png")
+            img(id="logo" src="~/assets/img/logo.png")
         li
           a(href="/le-collectif" :class="{ selected : collective }") Le collectif
         li
@@ -42,7 +41,7 @@ export default class Navbar extends Vue {
 <style lang="less" scoped>
 .navbar {
   width: 100vw;
-  height: 150px;
+  height: 100px;
   position: sticky;
   top: 0;
   color: #000000;
