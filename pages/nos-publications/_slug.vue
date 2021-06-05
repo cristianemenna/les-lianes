@@ -13,7 +13,6 @@
             span {{ formatDate(post.date) }}
           .publication-details
             span.publicated-by Par :
-            //- a(:href="'/le-collectif/' + post.author")
             span {{ post.author }}
     Footer
 </template>
