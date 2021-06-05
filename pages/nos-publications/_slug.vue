@@ -2,10 +2,10 @@
   .portfolio-item
     Navbar
     .main-container
-      .post-container
-        .post-image
+      .publication-container
+        .publication-image
           img(:src="post.image")
-        .post-details
+        .publication-details-container
           h1 {{ post.title }}
           p {{ post.description }}
           .publication-details
@@ -49,24 +49,20 @@ export default {
 </script>
 
 <style lang="less" scoped>
-// .main-container {
-//   display: grid;
-//   grid-auto-flow: row;
-// }
 
-.post-container {
+.publication-container {
   display: grid;
   grid-auto-flow: column;
   grid-template-columns: 300px 4fr;
   grid-gap: 80px;
-  place-items: center;
-  .post-image {
+  align-items: center;
+  .publication-image {
     img {
       width: 100%;
       box-shadow: 1px 1px 4px 1px rgba(0, 0, 0, 0.2);
     }
   }
-  .post-details {
+  .publication-details-container {
     h1 {
       font-size: 30px;
     }

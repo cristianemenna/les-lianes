@@ -6,9 +6,9 @@
           a(href="/")
             img(id="logo" src="~/assets/img/logo.png")
         li
-          a(href="/le-collectif" :class="{ selected : collective }") Le collectif
-        li
           a(href="/nos-publications" :class="{ selected : portfolio }") Nos publications
+        li
+          a(href="/le-collectif" :class="{ selected : collective }") Qui sommes-nous ?
 </template>
 
 <script lang="ts">

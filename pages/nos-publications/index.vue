@@ -1,26 +1,51 @@
 <template lang="pug">
   .portfolio
-    h1 Nos publications
-    template(v-for="post of posts")
-      h2 {{ post.title }}
-      span {{ post.description }}
+    Navbar(portfolio)
+    .main-container
+      h1 Nos publications
+      .portfolio-container
+        Portfolio(:portfolio="portfolio")
+    Footer
 </template>
 
 <script>
-import { Vue, Component } from 'vue-property-decorator';
+import { Vue, Component } from "vue-property-decorator";
 
 export default {
   async asyncData({ $content, params, error }) {
-    let posts;
+    let portfolio;
     try {
-      posts = await $content("portfolio").fetch();
+      portfolio = await $content("portfolio").fetch();
     } catch (e) {
-      error({ message: "Post not found" });
+      error({ message: "Portfolio not found" });
     }
 
     return {
-      posts,
+      portfolio
     };
-  },
+  }
 };
 </script>
+
+<style lang="less" scoped>
+.main-container {
+  h1 {
+    font-size: 30px;
+  }
+}
+
+.portfolio-container {
+  margin-top: 50px;
+  /deep/ .portfolio {
+    grid-template-columns: repeat(4, 1fr);
+    grid-row-gap: 50px;
+    grid-column-gap: 15px;
+    img {
+      width: 250px;
+      height: 180px;
+      object-fit: cover;
+      box-shadow: 1px 1px 4px 1px rgba(0, 0, 0, 0.2);
+    }
+  }
+}
+</style>

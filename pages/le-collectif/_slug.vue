@@ -63,6 +63,7 @@ export default {
   grid-template-columns: 1fr 200px 9fr 1fr;
   grid-gap: 80px;
   place-items: center;
+  align-items: left;
   .member-avatar {
     grid-column: 2;
     img {
