@@ -9,16 +9,15 @@
 </template>
 
 <script lang="ts">
-import { Vue, Component, Prop } from 'vue-property-decorator';
+import { Vue, Component, Prop } from "vue-property-decorator";
 import Tags from "../tags/Tags.vue";
 
 @Component({
   components: {
-    Tags,
+    Tags
   }
 })
 export default class Portfolio extends Vue {
-
   @Prop()
   public tag: string;
 
@@ -29,7 +28,6 @@ export default class Portfolio extends Vue {
     const portofolioWithTags = this.portfolio.filter(p => p.tag);
     return portofolioWithTags.filter(p => p.tag.includes(this.tag));
   }
-
 }
 </script>
 
@@ -42,7 +40,7 @@ export default class Portfolio extends Vue {
   img {
     width: 300px;
     height: 250px;
-    object-fit: cover ;
+    object-fit: cover;
     box-shadow: 1px 1px 4px 1px rgba(0, 0, 0, 0.2);
     &:hover {
       filter: brightness(0.8);
@@ -58,7 +56,7 @@ export default class Portfolio extends Vue {
   }
   p {
     margin-top: 15px;
-    font-family: 'Raleway Bold';
+    font-family: "Raleway Bold";
   }
 }
 </style>
