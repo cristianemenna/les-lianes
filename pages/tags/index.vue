@@ -5,18 +5,21 @@
       h1 Tags
       Tags(:tags="tagsList" @click="tag => selectedTag = tag")
       .portfolio-container
-        Portfolio(:portfolio="portfolio" :tag="selectedTag" :tags="tagsList")
+        PortfolioFilteredByTag(:portfolio="portfolio" :tag="selectedTag" :tags="tagsList")
     Footer
 </template>
 
 <script lang="ts">
 import { Vue, Component } from "vue-property-decorator";
 import Tags from "../../components/tags/Tags.vue";
+import PortFolioFilteredByTag from "../../components/portfolio/PortfolioFilteredByTag.vue";
 
 export default {
   components: {
     Tags,
+    PortFolioFilteredByTag
   },
+  // @ts-ignore
   async asyncData({ $content, params, error }) {
     let portfolio;
     let tags;
@@ -26,6 +29,7 @@ export default {
     } catch (e) {
       error({ message: "Not found" });
     }
+    // @ts-ignore
     const tagsList = tags.map(t => t.tag);
 
     return {
@@ -33,16 +37,19 @@ export default {
       tagsList
     };
   },
-  data: () => {
+  data() {
     return {
-      selectedTag: "Politique",
+      selectedTag: '',
     }
+  },
+  created() {
+    // @ts-ignore
+    this.selectedTag = Object.keys(this.$route.query)[0];
   },
 };
 </script>
 
 <style lang="less" scoped>
-
 .main-container {
   h1 {
     font-size: 30px;
