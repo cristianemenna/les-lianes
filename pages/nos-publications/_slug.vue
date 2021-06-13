@@ -7,13 +7,18 @@
           img(:src="post.image")
         .publication-details-container
           h1 {{ post.title }}
-          p {{ post.description }}
+          textarea {{ post.description }}
+          iframe(v-if="post.video" :src="post.video" allowfullscreen)
           .publication-details
             span Publié le :
             span {{ formatDate(post.date) }}
           .publication-details
             span.publicated-by Par :
             span {{ post.author }}
+          .publication-details(v-if="post.source")
+            span A retrouver sur :
+            a(:href="post.source" target="_blank")
+              span.publicated-on {{ post.source }}
     Footer
 </template>
 
@@ -48,7 +53,6 @@ export default {
 </script>
 
 <style lang="less" scoped>
-
 .publication-container {
   display: grid;
   grid-auto-flow: column;
@@ -69,6 +73,10 @@ export default {
       text-align: justify;
       margin: 30px 0;
     }
+    iframe {
+      width: 100%;
+      height: 400px; // TODO
+    }
     .publication-details {
       span:first-child {
         font-family: "Raleway Bold";
@@ -76,6 +84,20 @@ export default {
         margin-right: 10px;
       }
     }
+    .publicated-on {
+      font-family: "Raleway" !important;
+    }
   }
+}
+
+textarea {
+  width: 100%;
+  height: 400px; // TODO
+  border: none;
+  overflow: hidden;
+  background-color: transparent;
+  resize: none;
+  outline: none;
+  font-family: "Raleway" !important;
 }
 </style>

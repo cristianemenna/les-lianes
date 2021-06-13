@@ -20,8 +20,10 @@ collections:
     fields:
       - { label: 'Titre', name: 'title', widget: 'string' }
       - { label: 'Date de publication', name: 'date', widget: 'datetime' }
-      - { label: 'Contenu', name: 'description', widget: 'string' }
-      - { label: 'Image', name: 'image', widget: 'image' }
+      - { label: 'Contenu', name: 'description', widget: 'text' }
+      - { label: 'Avatar', name: 'image', widget: 'image' }
+      - { label: "Lien vers publication d'origine", name: 'source', widget: 'string', required: false }
+      - { label: "Vidéo youtube", name: 'video', widget: 'string', required: false }
       - {
           label: 'Publié par',
           name: 'author',
@@ -29,7 +31,6 @@ collections:
           collection: 'collectif',
           search_fields: ['fullName'],
           value_field: 'fullName',
-          multiple: true,
          }
       - {
           label: 'Tags',
