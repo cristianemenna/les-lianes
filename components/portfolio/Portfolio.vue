@@ -1,11 +1,11 @@
 <template lang="pug">
   .portfolio
-    template(v-for="post of portfolio")
-        .portfolio-item
-          a(:href="'/nos-publications/' + post.slug")
-            img(:src="post.image")
-          Tags(:tags="post.tag")
-          p {{ post.title }}
+    template(v-for="post of portfolioFilteredByTag")
+      .portfolio-item
+        a(:href="'/nos-publications/' + post.slug")
+          img(:src="post.image")
+        p {{ post.title }}
+    span {{ tag }}
 </template>
 
 <script lang="ts">
@@ -13,14 +13,24 @@ import { Vue, Component, Prop } from 'vue-property-decorator';
 import Tags from "../tags/Tags.vue";
 
 @Component({
-  props: {
-    portfolio: Array,
-  },
   components: {
     Tags,
   }
 })
-export default class Portfolio extends Vue {}
+export default class Portfolio extends Vue {
+
+  @Prop()
+  public tag: string;
+
+  @Prop()
+  public portfolio: any[];
+
+  get portfolioFilteredByTag() {
+    const portofolioWithTags = this.portfolio.filter(p => p.tag);
+    return portofolioWithTags.filter(p => p.tag.includes(this.tag));
+  }
+
+}
 </script>
 
 <style lang="less" scoped>

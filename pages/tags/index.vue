@@ -4,11 +4,8 @@
     .main-container
       h1 Tags
       Tags(:tags="tagsList" @click="tag => selectedTag = tag")
-      span {{ selectedTag }}
       .portfolio-container
-        //- Portfolio(:portfolio="portfolio")
-        template(v-for="post of portfolio.map(p => p.tag ? p.tag.includes(selectedTag) : t)")
-          span {{ post.tag }}
+        Portfolio(:portfolio="portfolio" :tag="selectedTag" :tags="tagsList")
     Footer
 </template>
 
@@ -39,11 +36,6 @@ export default {
   data: () => {
     return {
       selectedTag: "Politique",
-    }
-  },
-  computed: {
-    test: function() {
-      return this.selectedTag;
     }
   },
 };
