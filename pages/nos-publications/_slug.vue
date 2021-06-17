@@ -58,7 +58,6 @@ export default {
   grid-auto-flow: column;
   grid-template-columns: 300px 4fr;
   grid-gap: 80px;
-  align-items: center;
   .publication-image {
     img {
       width: 100%;
@@ -75,7 +74,9 @@ export default {
     }
     iframe {
       width: 100%;
-      height: 400px; // TODO
+      height: 400px;
+      margin-bottom: 30px;
+      border: none;
     }
     .publication-details {
       span:first-child {
