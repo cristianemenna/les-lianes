@@ -20,13 +20,15 @@ export default class Footer extends Vue {
 <style lang="less" scoped>
 .footer {
   width: 100%;
-  height: 120px;
+  height: 100px;
   bottom: 0;
+  margin-top: 30px;
   background-color: #FFFFFF;
   color: #000000;
   display: grid;
   align-content: center;
   justify-content: center;
+  box-shadow: 0 -1px 4px 0px rgba(0, 0, 0, 0.2);
 }
 
 ul {
@@ -35,6 +37,9 @@ ul {
   grid-gap: 15px;
   li {
     list-style: none;
-  }
+    &:first-of-type {
+      font-family: 'Raleway Bold';
+    }
+  } 
 }
 </style>
