@@ -7,7 +7,7 @@
           img(:src="post.image")
         .publication-details-container
           h1 {{ post.title }}
-          textarea {{ post.description }}
+          pre.description {{ post.description }}
           iframe(v-if="post.video" :src="post.video" allowfullscreen)
           .publication-details
             span Publié le :
@@ -90,14 +90,10 @@ export default {
   }
 }
 
-textarea {
-  width: 100%;
-  height: 400px; // TODO
-  border: none;
-  overflow: hidden;
-  background-color: transparent;
-  resize: none;
-  outline: none;
+pre.description {
+  white-space: pre-wrap;
+  text-align: justify;
   font-family: "Raleway" !important;
+  margin: 30px 0;
 }
 </style>
