@@ -1,11 +1,14 @@
 <template lang="pug">
   .portfolio-wrapper
-    template(v-for="post of portfolio")
-      .portfolio-item
-        a(:href="'/nos-publications/' + post.slug")
-          img(:src="post.image")
-          Tags(:tags="post.tag" link)
-        p {{ post.title }}
+    template(v-for="itemIndex in itemsToShow")
+      template(v-if="itemIndex <= portfolio.length")
+        .portfolio-item
+          a(:href="'/nos-publications/' + portfolio[itemIndex - 1].slug")
+            img(:src="portfolio[itemIndex -1].image")
+            Tags(:tags="portfolio[itemIndex -1].tag" link)
+          p {{ portfolio[itemIndex -1].title }}
+    input(v-if="itemsToShow < portfolio.length" type="button" value="Voir plus" @click="itemsToShow += 3")
+    p {{ itemsToShow }}
 </template>
 
 <script lang="ts">
@@ -20,5 +23,15 @@ import Tags from "../tags/Tags.vue";
 export default class Portfolio extends Vue {
   @Prop()
   public portfolio!: any[];
+
+  public itemsToShow = 3;
 }
 </script>
+
+<style lang="less" scoped>
+
+input:hover {
+  cursor: pointer;
+}
+
+</style>
