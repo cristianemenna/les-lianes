@@ -111,6 +111,9 @@ export default {
       }
     }
     .publicated-on {
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
       font-style: italic;
       font-family: "Raleway" !important;
     }
