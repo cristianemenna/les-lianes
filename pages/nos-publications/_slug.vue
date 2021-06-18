@@ -10,12 +10,15 @@
           pre.description {{ post.description }}
           iframe(v-if="post.video" :src="post.video" allowfullscreen)
           .publication-details
+            img(src="~/assets/icons/calender-icon.svg")
             span Publié le :
             span {{ formatDate(post.date) }}
           .publication-details
+            img(src="~/assets/icons/user-icon.svg")
             span.publicated-by Par :
             span {{ post.author }}
           .publication-details(v-if="post.source")
+            img(src="~/assets/icons/link-icon.svg")
             span A retrouver sur :
             a(:href="post.source" target="_blank")
               span.publicated-on {{ post.source }}
@@ -51,7 +54,7 @@ export default {
         .where({
           author: {
             $eq: post.author
-          },
+          }
         })
         .fetch();
     } catch (e) {
@@ -95,10 +98,14 @@ export default {
       border: none;
     }
     .publication-details {
-      span:first-child {
+      display: grid;
+      grid-auto-flow: column;
+      align-items: center;
+      justify-content: flex-start;
+      grid-gap: 5px;
+      span:nth-child(2) {
         font-family: "Raleway Bold";
         font-style: italic;
-        margin-right: 10px;
       }
     }
     .publicated-on {
@@ -125,5 +132,4 @@ pre.description {
     margin: 50px 0;
   }
 }
-
 </style>

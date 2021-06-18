@@ -9,7 +9,9 @@
           h1 {{ member.fullName }}
           p.member-role {{ member.role }}
           p.member-presentation {{ member.description }}
-          p Contact : {{ member.email }}
+          .contact
+            img(src="~/assets/icons/mail-icon.svg")
+            p Contact : {{ member.email }}
       .member-portfolio
         Portfolio(:portfolio="portfolio")
     Footer
@@ -80,7 +82,7 @@ export default {
     p {
       text-align: justify;
       &.member-role {
-        font-family: 'Raleway Bold';
+        font-family: "Raleway Bold";
         font-style: italic;
       }
       &.member-presentation {
@@ -88,5 +90,13 @@ export default {
       }
     }
   }
+}
+
+.contact {
+  display: grid;
+  grid-auto-flow: column;
+  align-items: center;
+  justify-content: flex-start;
+  grid-gap: 5px;
 }
 </style>
