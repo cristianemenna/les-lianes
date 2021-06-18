@@ -19,17 +19,22 @@
             span A retrouver sur :
             a(:href="post.source" target="_blank")
               span.publicated-on {{ post.source }}
+      .author-related-content
+        h2 Publications de la même autrice
+        Portfolio(:portfolio="portfolio")
     Footer
 </template>
 
 <script>
 import Footer from "../../components/footer/Footer.vue";
 import Navbar from "../../components/navbar/Navbar.vue";
+import Portfolio from "../../components/portfolio/Portfolio.vue";
 
 export default {
   components: {
     Footer,
-    Navbar
+    Navbar,
+    Portfolio
   },
   methods: {
     formatDate(date) {
@@ -39,14 +44,25 @@ export default {
   },
   async asyncData({ $content, params, error }) {
     let post;
+    let portfolio;
     try {
       post = await $content("portfolio", params.slug).fetch();
+      portfolio = await $content("portfolio")
+        .where({
+          author: {
+            $eq: post.author
+          },
+        })
+        .fetch();
     } catch (e) {
       error({ message: "Post not found" });
     }
 
+    // TODO exclude post slug from list
+
     return {
-      post
+      post,
+      portfolio
     };
   }
 };
@@ -97,4 +113,17 @@ pre.description {
   font-family: "Raleway" !important;
   margin: 30px 0;
 }
+
+.main-container {
+  display: grid;
+  grid-auto-flow: row;
+  grid-gap: 100px;
+}
+
+.author-related-content {
+  h2 {
+    margin: 50px 0;
+  }
+}
+
 </style>
