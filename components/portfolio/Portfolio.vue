@@ -7,8 +7,7 @@
             img(:src="portfolio[itemIndex -1].image")
             Tags(:tags="portfolio[itemIndex -1].tag" link)
           p {{ portfolio[itemIndex -1].title }}
-    input(v-if="itemsToShow < portfolio.length" type="button" value="Voir plus" @click="itemsToShow += 3")
-    p {{ itemsToShow }}
+    .showMore(v-if="itemsToShow < portfolio.length" @click="itemsToShow += 3") Voir plus
 </template>
 
 <script lang="ts">
@@ -24,14 +23,24 @@ export default class Portfolio extends Vue {
   @Prop()
   public portfolio!: any[];
 
-  public itemsToShow = 3;
+  public itemsToShow = 9;
 }
 </script>
 
 <style lang="less" scoped>
 
-input:hover {
-  cursor: pointer;
+.showMore {
+  margin: 30px auto;
+  padding: 10px 50px;
+  grid-column: 2;
+  background-color: #228782;
+  color: #FFFFFF;
+  text-align: center;
+  border-radius: 8px;
+  &:hover {
+    cursor: pointer;
+    background-color: rgba(37, 156, 147, 0.8);
+  }
 }
 
 </style>
