@@ -20,9 +20,9 @@
           .publication-details(v-if="post.source")
             img(src="~/assets/icons/link-icon.svg")
             span A retrouver sur :
-            a(:href="post.source" target="_blank")
-              span.publicated-on {{ post.source }}
-      .author-related-content
+          a(:href="post.source" target="_blank")
+            span.publicated-on {{ post.source }}
+      .author-related-content(v-if="portfolio.length")
         h2 Publications de la même autrice
         Portfolio(:portfolio="portfolio")
     Footer
@@ -105,11 +105,13 @@ export default {
       justify-content: flex-start;
       grid-gap: 5px;
       span:nth-child(2) {
+        grid-row: 1;
         font-family: "Raleway Bold";
         font-style: italic;
       }
     }
     .publicated-on {
+      font-style: italic;
       font-family: "Raleway" !important;
     }
   }

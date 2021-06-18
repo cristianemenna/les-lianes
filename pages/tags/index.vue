@@ -57,7 +57,7 @@ export default {
 }
 
 .tags {
-  grid-template-columns: repeat(8, 1fr);
+  grid-template-columns: repeat(8, 1fr) !important;
 }
 
 .portfolio-container {
