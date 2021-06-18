@@ -61,7 +61,8 @@ export default {
       error({ message: "Post not found" });
     }
 
-    // TODO exclude post slug from list
+    const index = portfolio.findIndex(p => p.date === post.date);
+    portfolio.splice(index, 1);
 
     return {
       post,
