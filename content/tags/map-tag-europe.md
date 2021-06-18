@@ -1,3 +1,3 @@
 ---
-tag: Europe
+tag: France
 ---
