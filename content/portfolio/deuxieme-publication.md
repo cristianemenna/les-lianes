@@ -11,6 +11,3 @@ author: Emma Roulin
 tag:
   - International
 ---
-Super content
-
-![Fake news](/img/fake_news.jpg "Mon icon")
