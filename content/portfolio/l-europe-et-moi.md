@@ -13,6 +13,7 @@ description: >-
 
   Découvrir la bande-annonce
 image: /img/ill-leuropeetmoi_illlust.png
+sourceName: L'europe et moi 
 source: http://leuropeetmoi.rfi.fr/
 video: https://www.youtube.com/embed/yThlKBdodkY
 author: Emma Roulin

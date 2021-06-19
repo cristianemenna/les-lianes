@@ -6,14 +6,12 @@ description: >-
   Allaire avait 16 ans. 25 ans après, elle livre un témoignage bouleversant.
 
 
-  Lire l’histoire de Jeanne sur le site de l’Actu, lien en-dessous.
+  Lire l’histoire de Jeanne sur le site de l’Actu.
 image: /img/rwanda.png
+sourceName: L'actu 
 source: https://lactu.playbacpresse.fr/article/en-1994-a-16-ans-jeanne-a-echappe-au-genocide-des-tutsis-au-rwanda
 author: Emma Roulin
 tag:
   - International
   - Société
 ---
-Super content
-
-![icon](/img/user.svg "Mon icon")

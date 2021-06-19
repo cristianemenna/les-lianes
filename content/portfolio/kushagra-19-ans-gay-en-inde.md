@@ -13,6 +13,7 @@ description: >-
 
   Il y a cinq ans, pourtant, la Haute cour de Delhi avait jugé que l’article 377, criminalisant l’homosexualité, constitue une violation des droits fondamentaux. Mais la Cour suprême n’est pas d’accord, semble-t-il, et son avis s’impose aussi au gouvernement, qui soutenait pour sa part le combat des associations LGBT (lesbiennes, gay, bisexuels et transsexuels). 
 image: /img/kushagra-19-ans-et-gay-en-inde-1024x682.jpg
+sourceName: L'express 
 source: https://www.lexpress.fr/actualite/monde/asie/kushagra-19-ans-et-gay-en-inde_1322830.html
 author: Émilie Jéhanno
 tag:

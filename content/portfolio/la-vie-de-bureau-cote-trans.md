@@ -12,8 +12,9 @@ description: >-
   Article co-écrit avec Raphaëlle Vivent
 
 
-  Pour lire l’article en entier, rendez-vous sur le site de 8e étage, lien en-dessous.
+  Pour lire l’article en entier, rendez-vous sur le site de 8e étage.
 image: /img/2-bureau-trans-768x431.jpg
+sourceName: 8e étage 
 source: https://8e-etage.fr/2017/06/26/la-vie-de-bureau-cote-trans/
 author: Mathilde Loire
 tag:

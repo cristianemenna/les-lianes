@@ -15,8 +15,9 @@ description: >-
   Ici, pas de soucis ! Ce lieu d’habitat partagé pour seniors LGBT a ouvert ses portes il y a cinq ans et a fait un choix intergénérationnel. Au total, trente-quatre résidents, âgés de 25 à 75 ans, vivent dans cet immeuble, qui fait également office de centre culturel LGBT, avec des activités proposées par l’association Schwulenberatung Berlin. Vingt-neuf hommes gays ou bi et cinq femmes, dont une lesbienne. Vieillir différemment, le groupe à l’origine de ce projet, a préféré rester majoritairement entre hommes tout en souhaitant injecter un peu de mixité, aussi bien en termes d’âge que de sexe. Résultats : 60 % d’hommes seniors gays, 20 % de jeunes gays et 20 % de femmes, homos ou pas.
 
 
-  Pour lire l’article complet rendez-vous sur le site de Causette, lien en-dessous.
+  Pour lire l’article complet rendez-vous sur le site de Causette.
 image: /img/qu_elle-est-gay-ma-retraite-1-1024x768.jpg
+sourceName: Causette 
 source: https://www.causette.fr/
 author: Émilie Jéhanno
 tag:
