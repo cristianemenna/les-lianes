@@ -1,6 +1,6 @@
 ---
 title: L’Europe… et moi ?
-date: 2021-05-14T17:56:45.376Z
+date: 2021-05-15T17:56:45.376Z
 description: >-
   En 2017 et 2018, avec Frédérique Lebel de RFI, nous sommes allées à la
   rencontre des citoyens européens qui vivent, analysent et dénoncent (parfois
