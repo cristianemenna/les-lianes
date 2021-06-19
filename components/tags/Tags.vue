@@ -25,12 +25,12 @@ export default class Tags extends Vue {}
   display: grid;
   grid-auto-flow: row;
   grid-gap: 10px;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(6, 1fr);
 }
 
 .tag {
   margin-top: 10px;
-  padding: 2px 10px;
+  padding: 4px 10px;
   background-color: rgba(37, 156, 147, 0.6);
   color: #ffffff;
   border-radius: 15px;
