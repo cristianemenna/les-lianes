@@ -37,7 +37,7 @@ export default class Index extends Vue {
   width: 100vw;
   height: 100vh;
   background: #000000;
-  background-image: url("~/assets/img/home.jpg");
+  background-image: url("~/assets/img/home2.jpg");
   background-size: cover;
 }
 

@@ -3,7 +3,7 @@
     Navbar(collective)
     .main-container
       .collective-container
-        img(src="~/assets/img/home2.jpg")
+        img(src="~/assets/img/home-container.jpg")
         .collective-container-content
           h2 Pourquoi « Les Lianes » ?
           p Parce que comme les lianes, on « grandit » en s’accrochant à un maximum de supports, on multiplie les sources, on les croise, afin de produire une info crédible et vérifiée face aux rumeurs et à la désinformation. Comme elles, on est flexibles sur le terrain. On passe partout pour atteindre notre but : trouver le bon témoignage, avancer dans une enquête… On « grimpe » en prenant le temps. On privilégie les formats longs : l’investigation, le reportage, le documentaire, le podcast, etc. Être curieuses, tenaces, rigoureuses sur l’info, indépendantes, voilà ce qui nous ressemble et qui nous rassemble.

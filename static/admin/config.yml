@@ -22,6 +22,7 @@ collections:
       - { label: 'Contenu', name: 'description', widget: 'text' }
       - { label: 'Avatar', name: 'image', widget: 'image' }
       - { label: "Lien vers publication d'origine", name: 'source', widget: 'string', required: false }
+      - { label: "Nom du site de la publication d'origine", name: 'sourceName', widget: 'string', required: false }
       - { label: "Vidéo youtube", name: 'video', widget: 'string', required: false }
       - {
           label: 'Publié par',

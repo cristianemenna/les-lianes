@@ -6,9 +6,10 @@ description: >-
 
   À une semaine de l’événement, Cheng Chi-wei, le coordinateur de cette 16ème édition se déplace en permanence avec sa tablette. Cette année, il a mis les bouchées doubles : le groupe dispose d’un budget de neuf millions de dollars taiwanais (environ 300 000 euros) et d’une équipe de 20 employés et de 300 bénévoles, issu.e.s d’une trentaine d’associations.
 
-Pour lire l’article en entier, rendez-vous sur le site de Komitid, lien ci-dessous.
+Pour lire l’article en entier, rendez-vous sur le site de Komitid.
 
 image: /img/streetPress_bibliothèque-sonore.jpg
+sourceName: Komitid 
 source: https://www.komitid.fr/2019/10/23/taiwan-pride-droits-lgbt/ 
 author: Marion Vercelot
 tag:

@@ -2,9 +2,9 @@ export default {
   target: 'static',
 
   head: {
-    title: 'les-lianes',
+    title: 'Les Lianes - Collectif de journalistes et photographes',
     htmlAttrs: {
-      lang: 'en'
+      lang: 'fr'
     },
     meta: [
       { charset: 'utf-8' },

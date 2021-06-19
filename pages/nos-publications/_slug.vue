@@ -20,8 +20,7 @@
           .publication-details(v-if="post.source")
             img(src="~/assets/icons/link-icon.svg")
             span A retrouver sur :
-          a(:href="post.source" target="_blank")
-            span.publicated-on {{ post.source }}
+            a(:href="post.source" target="_blank") {{ post.sourceName ? post.sourceName : "Publication d'origine"}}
       .author-related-content(v-if="portfolio.length")
         h2 Publications de la même autrice
         Portfolio(:portfolio="portfolio")
@@ -109,13 +108,6 @@ export default {
         font-family: "Raleway Bold";
         font-style: italic;
       }
-    }
-    .publicated-on {
-      text-overflow: ellipsis;
-      white-space: nowrap;
-      overflow: hidden;
-      font-style: italic;
-      font-family: "Raleway" !important;
     }
   }
 }
