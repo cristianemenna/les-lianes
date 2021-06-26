@@ -9,6 +9,7 @@
           h1 {{ post.title }}
           pre.description {{ post.description }}
           iframe(v-if="post.video" :src="post.video" allowfullscreen)
+          audio(v-if="post.audio" controls :src="post.audio")
           .publication-details
             img(src="~/assets/icons/calender-icon.svg")
             span Publié le :
@@ -60,8 +61,14 @@ export default {
       error({ message: "Post not found" });
     }
 
+    // removing current post of author posts list
     const index = portfolio.findIndex(p => p.date === post.date);
     portfolio.splice(index, 1);
+
+    if (post.audio) {
+      let toRemove = '/static';
+      post.audio = post.audio.replace(toRemove, '');
+    }
 
     return {
       post,
@@ -96,6 +103,9 @@ export default {
       height: 400px;
       margin-bottom: 30px;
       border: none;
+    }
+    audio {
+      margin-bottom: 30px;
     }
     .publication-details {
       display: grid;

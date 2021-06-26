@@ -2,6 +2,7 @@ backend:
   name: git-gateway
   branch: main
 
+
 locale: 'fr'
 media_folder: static/img
 public_folder: /img
@@ -24,6 +25,7 @@ collections:
       - { label: "Lien vers publication d'origine", name: 'source', widget: 'string', required: false }
       - { label: "Nom du site de la publication d'origine", name: 'sourceName', widget: 'string', required: false }
       - { label: "Vidéo youtube", name: 'video', widget: 'string', required: false }
+      - { label: "Audio", name: 'audio', widget: 'file', required: false }
       - {
           label: 'Publié par',
           name: 'author',
