@@ -115,8 +115,8 @@ export default {
       grid-gap: 5px;
       span:nth-child(2) {
         grid-row: 1;
-        font-family: "Raleway Bold";
         font-style: italic;
+        font-weight: bolder;
       }
     }
   }
@@ -125,7 +125,7 @@ export default {
 pre.description {
   white-space: pre-wrap;
   text-align: justify;
-  font-family: "Raleway" !important;
+  font-family: "RobotoC" !important;
   margin: 30px 0;
 }
 

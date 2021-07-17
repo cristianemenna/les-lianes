@@ -45,9 +45,6 @@ export default class Index extends Vue {
   background-color: rgba(255, 255, 255, 0.5) !important;
   height: 100px;
   z-index: 1;
-  a {
-    font-size: 15px;
-  }
 }
 
 .main-container {
