@@ -67,6 +67,7 @@ ul {
     a {
       text-decoration: none;
       color: black;
+      font-weight: bold;
       &.selected {
         padding-bottom: 4px;
         border-bottom: 3px solid #228782;

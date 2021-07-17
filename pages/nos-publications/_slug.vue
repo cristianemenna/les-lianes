@@ -3,21 +3,17 @@
     Navbar
     .main-container
       .publication-container
-        .publication-image
-          img(:src="post.image")
         .publication-details-container
+          img(:src="post.image")
           h1 {{ post.title }}
+          .publication-details.publication-author
+            img.avatar(:src="member[0].avatar" :alt="member[0].avatarAlt")
+            span {{ post.author }}
+            span.separator ⸱
+            span.date {{ formatDate(post.date) }}
           pre.description {{ post.description }}
           iframe(v-if="post.video" :src="post.video" allowfullscreen)
           audio(v-if="post.audio" controls :src="post.audio")
-          .publication-details
-            img(src="~/assets/icons/calender-icon.svg")
-            span Publié le :
-            span {{ formatDate(post.date) }}
-          .publication-details
-            img(src="~/assets/icons/user-icon.svg")
-            span.publicated-by Par :
-            span {{ post.author }}
           .publication-details(v-if="post.source")
             img(src="~/assets/icons/link-icon.svg")
             span A retrouver sur :
@@ -48,8 +44,16 @@ export default {
   async asyncData({ $content, params, error }) {
     let post;
     let portfolio;
+    let member;
     try {
       post = await $content("portfolio", params.slug).fetch();
+      member = await $content("collective")
+        .where({
+          fullName: {
+            $eq: post.author
+          }
+        })
+        .fetch();
       portfolio = await $content("portfolio")
         .where({
           author: {
@@ -66,13 +70,14 @@ export default {
     portfolio.splice(index, 1);
 
     if (post.audio) {
-      let toRemove = '/static';
-      post.audio = post.audio.replace(toRemove, '');
+      let toRemove = "/static";
+      post.audio = post.audio.replace(toRemove, "");
     }
 
     return {
       post,
-      portfolio
+      portfolio,
+      member
     };
   }
 };
@@ -81,9 +86,9 @@ export default {
 <style lang="less" scoped>
 .publication-container {
   display: grid;
-  grid-auto-flow: column;
-  grid-template-columns: 300px 4fr;
   grid-gap: 80px;
+  width: 800px;
+  margin: 0 auto;
   .publication-image {
     img {
       width: 100%;
@@ -91,7 +96,11 @@ export default {
     }
   }
   .publication-details-container {
+    img {
+      width: 100%;
+    }
     h1 {
+      margin-top: 30px;
       font-size: 30px;
     }
     p {
@@ -107,16 +116,27 @@ export default {
     audio {
       margin-bottom: 30px;
     }
+    .avatar{
+      width: 50px;
+      height: 50px;
+      object-fit: cover;
+      border-radius: 50%;
+    }
     .publication-details {
       display: grid;
       grid-auto-flow: column;
       align-items: center;
       justify-content: flex-start;
       grid-gap: 5px;
-      span:nth-child(2) {
-        grid-row: 1;
+      &.publication-author {
+        grid-gap: 15px;
+      }
+      .separator {
+        font-weight: bold;
+      }
+      .date {
+        font-size: 13px;
         font-style: italic;
-        font-weight: bolder;
       }
     }
   }
@@ -137,6 +157,7 @@ pre.description {
 
 .author-related-content {
   h2 {
+    font-size: 20px;
     margin: 50px 0;
   }
 }
