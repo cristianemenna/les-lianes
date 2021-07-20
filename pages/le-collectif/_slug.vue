@@ -62,12 +62,12 @@ export default {
 .member-container {
   display: grid;
   grid-auto-flow: column;
-  grid-template-columns: 1fr 200px 9fr 1fr;
-  grid-gap: 80px;
+  grid-template-columns: 200px auto;
+  grid-gap: 50px;
   place-items: center;
-  align-items: left;
+  align-content: left;
   .member-avatar {
-    grid-column: 2;
+    grid-column: 1;
     img {
       width: 100%;
       border-radius: 50%;
@@ -98,5 +98,9 @@ export default {
   align-items: center;
   justify-content: flex-start;
   grid-gap: 5px;
+  img {
+    width: 25px;
+    height: 25px;
+  }
 }
 </style>
