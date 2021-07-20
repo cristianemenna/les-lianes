@@ -9,6 +9,8 @@
           a(href="/nos-publications" :class="{ selected : portfolio }") Nos publications
         li
           a(href="/le-collectif" :class="{ selected : collective }") Qui sommes-nous ?
+        li
+          img(src="~/assets/icons/menu-icon.svg")
 </template>
 
 <script lang="ts">
@@ -18,7 +20,7 @@ import { Vue, Component } from "vue-property-decorator";
   props: {
     portfolio: Boolean,
     collective: Boolean,
-    home: Boolean,
+    home: Boolean
   }
 })
 export default class Navbar extends Vue {
@@ -27,7 +29,7 @@ export default class Navbar extends Vue {
       const navbar = document.querySelector(".navbar") as HTMLElement;
       if (scrollY > 90) {
         navbar.style.boxShadow = "0 -2px 4px 1px rgba(0, 0, 0, 0.5)";
-        navbar.style.width = "100vw"
+        navbar.style.width = "100vw";
       }
 
       if (scrollY === 0) {
@@ -49,6 +51,9 @@ export default class Navbar extends Vue {
   display: flex;
   align-items: center;
   z-index: 1;
+  @media only screen and (max-width: 800px) {
+    height: 80px;
+  }
 }
 
 .navbar-content {
@@ -62,6 +67,10 @@ ul {
   grid-template-columns: 3fr 1fr 1fr;
   align-items: center;
   padding: 0;
+  @media only screen and (max-width: 800px) {
+    grid-template-columns: 2fr 1fr;
+    align-items: baseline;
+  }
   li {
     list-style: none;
     a {
@@ -76,10 +85,35 @@ ul {
         color: #228782;
       }
     }
+    &:nth-child(4) {
+      display: none;
+    }
+    @media only screen and (max-width: 800px) {
+      &:nth-child(1) {
+        margin-left: 20px;
+      }
+      &:nth-child(2),
+      &:nth-child(3) {
+        display: none;
+      }
+      &:nth-child(4) {
+        display: block;
+        justify-self: center;
+        img {
+          width: 28px;
+        }
+      }
+    }
   }
 }
 
 #logo {
   width: 200px;
+  @media only screen and (max-width: 800px) {
+    width: 150px;
+  }
+}
+
+@media only screen and (max-width: 800px) {
 }
 </style>
