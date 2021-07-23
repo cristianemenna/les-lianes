@@ -1,6 +1,7 @@
 <template lang="pug">
   .les-lianes
-    Navbar
+    Navbar(@click="opened => showDropdown = opened")
+    DropDownMenu(v-if="showDropdown")
     .main
       .main-container
         a(href="/le-collectif")
@@ -11,15 +12,19 @@
 
 <script lang="ts">
 import { Vue, Component } from "vue-property-decorator";
+import DropDownMenu from "../components/drop-down-menu/DropDownMenu.vue";
 import Navbar from "../components/navbar/Navbar.vue";
 import Footer from "../components/footer/Footer.vue";
 
 @Component({
   components: {
+    DropDownMenu,
     Navbar
   }
 })
 export default class Index extends Vue {
+  public showDropdown = false;
+
   public head() {
     return {
       script: [
@@ -55,6 +60,9 @@ export default class Index extends Vue {
   grid-auto-flow: column;
   grid-template-columns: 1fr 2fr 1.5fr;
   place-items: center;
+  @media only screen and (max-width: 800px) {
+    grid-template-columns: 1fr;
+  }
   a {
     grid-column: 3;
     @media only screen and (max-width: 1000px) {
@@ -79,5 +87,12 @@ export default class Index extends Vue {
     margin: 25px 0;
     font-size: 16px;
   }
+  @media only screen and (max-width: 800px) {
+    padding: 15px;
+  }
+}
+
+/deep/ .dropdown {
+  position: absolute;
 }
 </style>

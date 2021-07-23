@@ -1,6 +1,7 @@
 <template lang="pug">
   .tags
-    Navbar
+    Navbar(@click="opened => showDropdown = opened")
+    DropDownMenu(v-if="showDropdown")
     .main-container
       h1 Tags
       Tags(:tags="tagsList" @click="tag => selectedTag = tag")
@@ -10,12 +11,14 @@
 </template>
 
 <script lang="ts">
+import DropDownMenu from "../../components/drop-down-menu/DropDownMenu.vue";
 import { Vue, Component } from "vue-property-decorator";
 import Tags from "../../components/tags/Tags.vue";
 import PortFolioFilteredByTag from "../../components/portfolio/PortfolioFilteredByTag.vue";
 
 export default {
   components: {
+    DropDownMenu,
     Tags,
     PortFolioFilteredByTag
   },
@@ -40,6 +43,7 @@ export default {
   data() {
     return {
       selectedTag: '',
+      showDropdown: false,
     }
   },
   created() {

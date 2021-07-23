@@ -1,6 +1,7 @@
 <template lang="pug">
   .portfolio-item
-    Navbar
+    Navbar(@click="opened => showDropdown = opened")
+    DropDownMenu(v-if="showDropdown")
     .main-container
       .publication-container
         .publication-details-container
@@ -25,12 +26,14 @@
 </template>
 
 <script>
+import DropDownMenu from "../../components/drop-down-menu/DropDownMenu.vue";
 import Footer from "../../components/footer/Footer.vue";
 import Navbar from "../../components/navbar/Navbar.vue";
 import Portfolio from "../../components/portfolio/Portfolio.vue";
 
 export default {
   components: {
+    DropDownMenu,
     Footer,
     Navbar,
     Portfolio
@@ -39,6 +42,11 @@ export default {
     formatDate(date) {
       const options = { year: "numeric", month: "long", day: "numeric" };
       return new Date(date).toLocaleDateString("fr", options);
+    }
+  },
+  data() {
+    return {
+      showDropdown: false,
     }
   },
   async asyncData({ $content, params, error }) {

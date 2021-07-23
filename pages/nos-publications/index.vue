@@ -1,6 +1,7 @@
 <template lang="pug">
   .portfolio
-    Navbar(portfolio)
+    Navbar(portfolio @click="opened => showDropdown = opened")
+    DropDownMenu(v-if="showDropdown")
     .main-container
       h1 Nos publications
       .portfolio-container
@@ -12,6 +13,11 @@
 import { Vue, Component } from "vue-property-decorator";
 
 export default {
+  data() {
+    return {
+      showDropdown: false,
+    }
+  },
   async asyncData({ $content, params, error }) {
     let portfolio;
     try {

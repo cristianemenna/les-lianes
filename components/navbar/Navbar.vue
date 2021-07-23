@@ -9,7 +9,7 @@
           a(href="/nos-publications" :class="{ selected : portfolio }") Nos publications
         li
           a(href="/le-collectif" :class="{ selected : collective }") Qui sommes-nous ?
-        li
+        li(@click="opened = !opened, $emit('click', opened)")
           img(src="~/assets/icons/menu-icon.svg")
 </template>
 
@@ -24,6 +24,8 @@ import { Vue, Component } from "vue-property-decorator";
   }
 })
 export default class Navbar extends Vue {
+  public opened = false;
+
   public mounted() {
     window.addEventListener("scroll", () => {
       const navbar = document.querySelector(".navbar") as HTMLElement;
@@ -59,6 +61,7 @@ export default class Navbar extends Vue {
 .navbar-content {
   width: 1000px;
   margin: 0 auto;
+  position: relative;
 }
 
 ul {
@@ -114,6 +117,4 @@ ul {
   }
 }
 
-@media only screen and (max-width: 800px) {
-}
 </style>

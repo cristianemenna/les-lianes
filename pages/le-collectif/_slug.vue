@@ -1,6 +1,7 @@
 <template lang="pug">
   .member
-    Navbar
+    Navbar(@click="opened => showDropdown = opened")
+    DropDownMenu(v-if="showDropdown")
     .main-container
       .member-container
         .member-avatar
@@ -18,15 +19,22 @@
 </template>
 
 <script>
+import DropDownMenu from "../../components/drop-down-menu/DropDownMenu.vue";
 import Footer from "../../components/footer/Footer.vue";
 import Navbar from "../../components/navbar/Navbar.vue";
 import Portfolio from "../../components/portfolio/Portfolio.vue";
 
 export default {
   components: {
+    DropDownMenu,
     Footer,
     Navbar,
     Portfolio
+  },
+  data() {
+    return {
+      showDropdown: false,
+    }
   },
   async asyncData({ $content, params, error }) {
     let member;

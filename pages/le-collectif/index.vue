@@ -1,6 +1,7 @@
 <template lang="pug">
   .collective
-    Navbar(collective)
+    Navbar(collective @click="opened => showDropdown = opened")
+    DropDownMenu(v-if="showDropdown")
     .main-container
       .collective-container
         img(src="~/assets/img/home-container.jpg")
@@ -25,16 +26,22 @@
 <script>
 import { Vue, Component } from "vue-property-decorator";
 import Card from "../../components/members/Card.vue";
+import DropDownMenu from "../../components/drop-down-menu/DropDownMenu.vue";
 import Footer from "../../components/footer/Footer.vue";
 import Navbar from "../../components/navbar/Navbar.vue";
 
 export default {
   components: {
     Card,
+    DropDownMenu,
     Footer,
     Navbar
   },
-
+  data() {
+    return {
+      showDropdown: false,
+    }
+  },
   async asyncData({ $content, params, error }) {
     let collective;
     try {
@@ -56,7 +63,7 @@ export default {
     });
 
     return {
-      collective
+      collective,
     };
   },
 };
