@@ -42,14 +42,14 @@ export default {
   },
   data() {
     return {
-      selectedTag: '',
-      showDropdown: false,
-    }
+      selectedTag: "",
+      showDropdown: false
+    };
   },
   created() {
     // @ts-ignore
     this.selectedTag = Object.keys(this.$route.query)[0];
-  },
+  }
 };
 </script>
 
@@ -62,6 +62,9 @@ export default {
 
 .tags {
   grid-template-columns: repeat(8, 1fr) !important;
+  @media only screen and (max-width: 800px) {
+    grid-template-columns: repeat(3, 1fr) !important;
+  }
 }
 
 .portfolio-container {

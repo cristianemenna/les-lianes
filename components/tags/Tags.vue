@@ -26,6 +26,9 @@ export default class Tags extends Vue {}
   grid-auto-flow: row;
   grid-gap: 10px;
   grid-template-columns: repeat(6, 1fr);
+  @media only screen and (max-width: 800px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
 .tag {
