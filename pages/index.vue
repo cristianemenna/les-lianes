@@ -93,6 +93,6 @@ export default class Index extends Vue {
 }
 
 /deep/ .dropdown {
-  position: absolute;
+  background-color: rgba(255, 255, 255, 0.5) !important;
 }
 </style>

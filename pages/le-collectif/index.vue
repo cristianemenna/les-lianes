@@ -2,7 +2,7 @@
   .collective
     Navbar(collective @click="opened => showDropdown = opened")
     DropDownMenu(v-if="showDropdown")
-    .main-container
+    .main-container(:class="{ overlay : showDropdown }")
       .collective-container
         img(src="~/assets/img/home-container.jpg")
         .collective-container-content
@@ -110,9 +110,6 @@ export default {
     width: 100%;
     box-shadow: 1px 1px 4px 1px rgba(0, 0, 0, 0.2);
     border-radius: 10px;
-    @media only screen and (max-width: 800px) {
-      // display: none;
-    }
   }
 }
 </style>

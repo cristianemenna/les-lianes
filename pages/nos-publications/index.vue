@@ -2,7 +2,7 @@
   .portfolio
     Navbar(portfolio @click="opened => showDropdown = opened")
     DropDownMenu(v-if="showDropdown")
-    .main-container
+    .main-container(:class="{ overlay : showDropdown }")
       h1 Nos publications
       .portfolio-container
         Portfolio(:portfolio="portfolio")

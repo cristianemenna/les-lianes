@@ -2,7 +2,7 @@
   .portfolio-item
     Navbar(@click="opened => showDropdown = opened")
     DropDownMenu(v-if="showDropdown")
-    .main-container
+    .main-container(:class="{ overlay : showDropdown }")
       .publication-container
         .publication-details-container
           img(:src="post.image")

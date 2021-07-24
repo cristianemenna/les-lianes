@@ -2,7 +2,7 @@
   .tags
     Navbar(@click="opened => showDropdown = opened")
     DropDownMenu(v-if="showDropdown")
-    .main-container
+    .main-container(:class="{ overlay : showDropdown }")
       h1 Tags
       Tags(:tags="tagsList" @click="tag => selectedTag = tag")
       .portfolio-container

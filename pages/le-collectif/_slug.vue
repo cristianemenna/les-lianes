@@ -2,7 +2,7 @@
   .member
     Navbar(@click="opened => showDropdown = opened")
     DropDownMenu(v-if="showDropdown")
-    .main-container
+    .main-container(:class="{ overlay : showDropdown }")
       .member-container
         .member-avatar
           img(:src="member.avatar" :alt="member.avatarAlt")

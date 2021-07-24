@@ -2,7 +2,7 @@
   .tag-item
     Navbar(@click="opened => showDropdown = opened")
     DropDownMenu(v-if="showDropdown")
-    .main-container
+    .main-container(:class="{ overlay : showDropdown }")
       .tag-container
         span {{ tag }}
     Footer
