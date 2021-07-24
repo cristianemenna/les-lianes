@@ -27,15 +27,15 @@ export default class Portfolio extends Vue {
 
   public mounted() {
     const showMoreButton = this.$el.querySelector(".showMore") as HTMLElement;
-    showMoreButton.addEventListener("click", () => {
-      const portfolioItem = this.$el.querySelectorAll(
-        ".portfolio-item"
-      );
-      console.log(portfolioItem);
-      for (let p of portfolioItem as any) {
-        p.style.paddingTop = "15px";
-      }
-    });
+    if (showMoreButton) {
+      showMoreButton.addEventListener("click", () => {
+        const portfolioItem = this.$el.querySelectorAll(".portfolio-item");
+        console.log(portfolioItem);
+        for (let p of portfolioItem as any) {
+          p.style.paddingTop = "15px";
+        }
+      });
+    }
   }
 }
 </script>
