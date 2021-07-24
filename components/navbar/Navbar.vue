@@ -52,7 +52,7 @@ export default class Navbar extends Vue {
   background-color: #ffffff;
   display: flex;
   align-items: center;
-  z-index: 1;
+  z-index: 2;
   @media only screen and (max-width: 800px) {
     height: 80px;
   }

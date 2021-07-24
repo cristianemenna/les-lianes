@@ -49,9 +49,10 @@ export default class Index extends Vue {
 /deep/ .navbar {
   background-color: rgba(255, 255, 255, 0.5) !important;
   height: 100px;
-  z-index: 1;
+  z-index: 2;
   @media only screen and (max-width: 800px) {
     height: 80px;
+    background-color: #ffffff !important;
   }
 }
 
@@ -90,9 +91,5 @@ export default class Index extends Vue {
   @media only screen and (max-width: 800px) {
     padding: 15px;
   }
-}
-
-/deep/ .dropdown {
-  background-color: rgba(255, 255, 255, 0.5) !important;
 }
 </style>

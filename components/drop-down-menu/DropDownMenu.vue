@@ -1,11 +1,12 @@
 <template lang="pug">
-  .dropdown
-    ul
-      li
-        a(href="/nos-publications") Nos publications
-      hr
-      li
-        a(href="/le-collectif") Qui sommes-nous ?
+  transition(name="slide-down" appear)
+    .dropdown
+      ul
+        li
+          a(href="/nos-publications") Nos publications
+        hr
+        li
+          a(href="/le-collectif") Qui sommes-nous ?
 </template>
 
 <script lang="ts">
@@ -22,9 +23,8 @@ export default class DropDownMenu extends Vue {
   position: fixed;
   width: 100%;
   height: 90px;
-  z-index: 2;
-  // background-color: rgba(255, 255, 255, 0.5) !important;
-  background-color: #FFFFFF !important;
+  z-index: 1;
+  background-color: #ffffff !important;
   box-shadow: 1px 1px 4px -1px rgba(0, 0, 0, 0.2);
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
