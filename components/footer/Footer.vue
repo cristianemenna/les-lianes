@@ -29,6 +29,9 @@ export default class Footer extends Vue {
   align-content: center;
   justify-content: center;
   box-shadow: 0 -1px 4px 0px rgba(0, 0, 0, 0.2);
+  @media only screen and (max-width: 800px) {
+    height: 80px;
+  }
 }
 
 ul {
@@ -40,6 +43,6 @@ ul {
     &:first-of-type {
       font-family: 'Raleway Bold';
     }
-  } 
+  }
 }
 </style>

@@ -39,8 +39,8 @@ export default {
   },
   data() {
     return {
-      showDropdown: false,
-    }
+      showDropdown: false
+    };
   },
   async asyncData({ $content, params, error }) {
     let collective;
@@ -63,9 +63,9 @@ export default {
     });
 
     return {
-      collective,
+      collective
     };
-  },
+  }
 };
 </script>
 
@@ -80,12 +80,18 @@ export default {
   grid-auto-flow: row;
   grid-gap: 150px;
   place-items: center;
+  @media only screen and (max-width: 800px) {
+    grid-gap: 50px;
+  }
 }
 
 .members-container {
   display: grid;
   grid-auto-flow: column;
   grid-gap: 30px;
+  @media only screen and (max-width: 800px) {
+    grid-auto-flow: row;
+  }
 }
 
 .collective-container {
@@ -95,11 +101,18 @@ export default {
   grid-gap: 30px;
   align-items: center;
   text-align: justify;
+  @media only screen and (max-width: 800px) {
+    grid-auto-flow: row;
+    grid-template-columns: 1fr;
+  }
 
   img {
     width: 100%;
     box-shadow: 1px 1px 4px 1px rgba(0, 0, 0, 0.2);
     border-radius: 10px;
+    @media only screen and (max-width: 800px) {
+      // display: none;
+    }
   }
 }
 </style>

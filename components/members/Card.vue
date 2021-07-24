@@ -29,6 +29,11 @@ export default class Card extends Vue {}
   padding: 10px;
   border-radius: 10px;
   box-shadow: 1px 1px 4px 1px rgba(0, 0, 0, 0.2);
+  @media only screen and (max-width: 800px) {
+    grid-template-columns: 1fr;
+    margin: 30px;
+    grid-gap: unset;
+  }
   &:hover {
     cursor: pointer;
     filter: brightness(0.8);
@@ -43,10 +48,17 @@ img {
 
 .card-member-title {
   font-size: 1.1em;
+  @media only screen and (max-width: 800px) {
+    font-size: 1.5em;
+    font-weight: bold;
+  }
 }
 
 .card-member-description {
   font-size: 0.9em;
   font-style: italic;
+  @media only screen and (max-width: 800px) {
+    font-size: 1em;
+  }
 }
 </style>

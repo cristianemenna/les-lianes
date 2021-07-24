@@ -18,6 +18,7 @@ export default {
 
   css: [
     '@/assets/less/commons.less',
+    '@/assets/less/fonts.less',
   ],
 
   components: true,
@@ -29,5 +30,21 @@ export default {
   modules: [
     '@nuxt/content'
   ],
+
+  server: {
+    port: 4000,
+  },
+
+  build: {
+    extend(config, ctx) {
+      config.module.rules.push({
+        test: /\.(ogg|mp3|wav|mpe?g)$/i,
+        loader: 'file-loader',
+        options: {
+          name: '[name].[ext]'
+        }
+      })
+    },
+  },
 
 }
