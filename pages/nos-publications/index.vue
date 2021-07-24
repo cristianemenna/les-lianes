@@ -15,8 +15,8 @@ import { Vue, Component } from "vue-property-decorator";
 export default {
   data() {
     return {
-      showDropdown: false,
-    }
+      showDropdown: false
+    };
   },
   async asyncData({ $content, params, error }) {
     let portfolio;

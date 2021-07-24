@@ -24,17 +24,29 @@ export default class Portfolio extends Vue {
   public portfolio!: any[];
 
   public itemsToShow = 9;
+
+  public mounted() {
+    const showMoreButton = this.$el.querySelector(".showMore") as HTMLElement;
+    showMoreButton.addEventListener("click", () => {
+      const portfolioItem = this.$el.querySelectorAll(
+        ".portfolio-item"
+      );
+      console.log(portfolioItem);
+      for (let p of portfolioItem as any) {
+        p.style.paddingTop = "15px";
+      }
+    });
+  }
 }
 </script>
 
 <style lang="less" scoped>
-
 .showMore {
   margin: 30px auto;
   padding: 10px 50px;
   grid-column: 2;
   background-color: #228782;
-  color: #FFFFFF;
+  color: #ffffff;
   text-align: center;
   border-radius: 8px;
   &:hover {
@@ -42,5 +54,4 @@ export default class Portfolio extends Vue {
     background-color: rgba(37, 156, 147, 0.8);
   }
 }
-
 </style>

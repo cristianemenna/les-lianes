@@ -46,8 +46,8 @@ export default {
   },
   data() {
     return {
-      showDropdown: false,
-    }
+      showDropdown: false
+    };
   },
   async asyncData({ $content, params, error }) {
     let post;
@@ -97,6 +97,9 @@ export default {
   grid-gap: 80px;
   width: 800px;
   margin: 0 auto;
+  @media only screen and (max-width: 800px) {
+    width: unset;
+  }
   .publication-image {
     img {
       width: 100%;
@@ -110,6 +113,9 @@ export default {
     h1 {
       margin-top: 30px;
       font-size: 30px;
+      @media only screen and (max-width: 800px) {
+        margin: 30px 0;
+      }
     }
     p {
       text-align: justify;
@@ -124,7 +130,7 @@ export default {
     audio {
       margin-bottom: 30px;
     }
-    .avatar{
+    .avatar {
       width: 50px;
       height: 50px;
       object-fit: cover;
