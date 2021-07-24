@@ -33,8 +33,8 @@ export default {
   },
   data() {
     return {
-      showDropdown: false,
-    }
+      showDropdown: false
+    };
   },
   async asyncData({ $content, params, error }) {
     let member;
@@ -74,16 +74,29 @@ export default {
   grid-gap: 50px;
   place-items: center;
   align-content: left;
+  @media only screen and (max-width: 800px) {
+    grid-auto-flow: row;
+    grid-template-rows: 1fr auto;
+    grid-template-columns: unset;
+  }
   .member-avatar {
     grid-column: 1;
+    @media only screen and (max-width: 800px) {
+    }
     img {
       width: 100%;
       border-radius: 50%;
       box-shadow: 1px 1px 4px 1px rgba(0, 0, 0, 0.2);
+      @media only screen and (max-width: 800px) {
+        width: 75%;
+      }
     }
   }
   .member-presentation {
     grid-column: 3;
+    @media only screen and (max-width: 800px) {
+      grid-column: unset;
+    }
     h1 {
       font-size: 30px;
     }

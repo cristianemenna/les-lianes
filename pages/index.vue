@@ -89,6 +89,7 @@ export default class Index extends Vue {
     font-size: 16px;
   }
   @media only screen and (max-width: 800px) {
+    background-color: rgba(255, 255, 255, 0.7);
     padding: 15px;
   }
 }
