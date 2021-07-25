@@ -25,6 +25,10 @@ import Footer from "../components/footer/Footer.vue";
 export default class Index extends Vue {
   public showDropdown = false;
 
+  public mounted() {
+    document.getElementsByTagName('html')[0].style.overflow = 'hidden';
+  }
+
   public head() {
     return {
       script: [
@@ -36,6 +40,7 @@ export default class Index extends Vue {
 </script>
 
 <style lang="less" scoped>
+
 .main {
   position: absolute;
   top: 0;

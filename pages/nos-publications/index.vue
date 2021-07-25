@@ -37,6 +37,9 @@ export default {
 .main-container {
   h1 {
     font-size: 30px;
+    @media only screen and (max-width: 800px) {
+      font-size: 20px;
+    }
   }
 }
 

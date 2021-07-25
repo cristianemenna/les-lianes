@@ -167,6 +167,9 @@ pre.description {
   display: grid;
   grid-auto-flow: row;
   grid-gap: 100px;
+  @media only screen and (max-width: 800px) {
+    grid-gap: 50px;
+  }
 }
 
 .author-related-content {

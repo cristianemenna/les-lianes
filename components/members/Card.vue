@@ -33,6 +33,7 @@ export default class Card extends Vue {}
     grid-template-columns: 1fr;
     margin: 30px;
     grid-gap: unset;
+    grid-row-gap: 5px;
   }
   &:hover {
     cursor: pointer;

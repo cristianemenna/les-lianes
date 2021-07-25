@@ -65,6 +65,9 @@ export default {
   display: grid;
   grid-auto-flow: row;
   grid-gap: 150px;
+  @media only screen and (max-width: 800px) {
+    grid-gap: 50px;
+  }
 }
 
 .member-container {
