@@ -7,6 +7,7 @@
       Tags(:tags="tagsList" @click="tag => selectedTag = tag")
       .portfolio-container
         PortfolioFilteredByTag(:portfolio="portfolio" :tag="selectedTag" :tags="tagsList")
+    ScrollToTop
     Footer
 </template>
 

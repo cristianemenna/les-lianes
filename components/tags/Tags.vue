@@ -4,8 +4,6 @@
       a(v-if="link" :href="'/tags?=' + tag")
         span.tag {{ tag }}
       span.tag(v-else @click="$emit('click', tag)") {{ tag }}
-
-
 </template>
 
 <script lang="ts">
@@ -14,7 +12,7 @@ import { Vue, Component, Prop } from "vue-property-decorator";
 @Component({
   props: {
     tags: Array,
-    link: Boolean,
+    link: Boolean
   }
 })
 export default class Tags extends Vue {}

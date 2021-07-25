@@ -22,6 +22,7 @@
       .author-related-content(v-if="portfolio.length")
         h2 Publications de la même autrice
         Portfolio(:portfolio="portfolio")
+    ScrollToTop
     Footer
 </template>
 

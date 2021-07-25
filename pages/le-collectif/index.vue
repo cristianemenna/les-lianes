@@ -20,6 +20,7 @@
               :fullName="member.fullName",
               :profession="member.role"
             )
+    ScrollToTop
     Footer
 </template>
 

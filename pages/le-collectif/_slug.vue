@@ -15,6 +15,7 @@
             p Contact : {{ member.email }}
       .member-portfolio
         Portfolio(:portfolio="portfolio")
+    ScrollToTop
     Footer
 </template>
 

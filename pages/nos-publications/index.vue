@@ -6,6 +6,7 @@
       h1 Nos publications
       .portfolio-container
         Portfolio(:portfolio="portfolio")
+    ScrollToTop
     Footer
 </template>
 
