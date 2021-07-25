@@ -38,8 +38,8 @@ export default class ScrollToTop extends Vue {
     width: 50px;
     height: 50px;
     @media only screen and (max-width: 800px) {
-      width: 35px;
-      height: 35px;
+      width: 40px;
+      height: 40px;
     }
   }
 }
