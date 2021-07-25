@@ -79,6 +79,7 @@ export default {
   align-content: left;
   @media only screen and (max-width: 800px) {
     grid-auto-flow: row;
+    grid-gap: 30px;
     grid-template-rows: 1fr auto;
     grid-template-columns: unset;
   }
