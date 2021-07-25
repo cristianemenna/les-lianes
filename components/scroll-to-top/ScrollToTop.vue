@@ -1,6 +1,6 @@
 <template lang="pug">
-  .scroll-to-top
-    img(src="~/assets/icons/back-to-top.svg" @click="scrollToTop" v-show="visible")
+  .scroll-to-top(@click="scrollToTop")
+    img(src="~/assets/icons/back-to-top.svg" @click="$emit('click')" v-show="visible")
 </template>
 
 <script lang="ts">
@@ -34,6 +34,11 @@ export default class ScrollToTop extends Vue {
   bottom: 20px;
   right: 20px;
   cursor: pointer;
+  @media only screen and (max-width: 800px) {
+    bottom: 0px;
+    right: 0px;
+    padding: 20px;
+  }
   img {
     width: 50px;
     height: 50px;
