@@ -1,6 +1,6 @@
 <template lang="pug">
-  .scroll-to-top(@click="scrollToTop")
-    img(src="~/assets/icons/back-to-top.svg" @click="$emit('click')" v-show="visible")
+  .scroll-to-top(v-if="visible " @click="scrollToTop")
+    img(src="~/assets/icons/back-to-top.svg" @click="$emit('click')")
 </template>
 
 <script lang="ts">

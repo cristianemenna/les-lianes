@@ -6,7 +6,7 @@
           a(:href="'/nos-publications/' + portfolio[itemIndex - 1].slug")
             img(:src="portfolio[itemIndex -1].image")
             Tags(:tags="portfolio[itemIndex -1].tag" link)
-          p {{ portfolio[itemIndex -1].title }}
+            p {{ portfolio[itemIndex -1].title }}
     .showMore(v-if="itemsToShow < portfolio.length" @click="itemsToShow += 3") Voir plus
 </template>
 

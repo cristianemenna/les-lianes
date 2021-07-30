@@ -114,6 +114,7 @@ export default {
     h1 {
       margin-top: 30px;
       font-size: 30px;
+      color: #000000;
       @media only screen and (max-width: 800px) {
         margin: 30px 0;
       }
