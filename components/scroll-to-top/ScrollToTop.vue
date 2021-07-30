@@ -19,11 +19,18 @@ export default class ScrollToTop extends Vue {
   }
 
   public scrollListener() {
-    this.visible = window.scrollY > 150;
+    if (window.pageYOffset > 150) {
+      this.visible = true;
+    } else {
+      this.visible = false;
+    }
   }
 
   public scrollToTop() {
-    window.scroll(0, 0);
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
   }
 }
 </script>
