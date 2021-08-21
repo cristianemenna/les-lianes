@@ -8,8 +8,9 @@
           img(:src="post.image")
           h1 {{ post.title }}
           .publication-details.publication-author
-            img.avatar(:src="member[0].avatar" :alt="member[0].avatarAlt")
-            span {{ post.author }}
+            a(:href="publicPath+'/le-collectif/'+member[0].slug")
+              img.avatar(:src="member[0].avatar" :alt="member[0].avatarAlt")
+              span {{ post.author }}
             span.separator ⸱
             span.date {{ formatDate(post.date) }}
           pre.description {{ post.description }}
@@ -43,11 +44,12 @@ export default {
     formatDate(date) {
       const options = { year: "numeric", month: "long", day: "numeric" };
       return new Date(date).toLocaleDateString("fr", options);
-    }
+    },
   },
   data() {
     return {
-      showDropdown: false
+      showDropdown: false,
+      publicPath: process.env.baseUrl,
     };
   },
   async asyncData({ $content, params, error }) {
@@ -144,6 +146,9 @@ export default {
       align-items: center;
       justify-content: flex-start;
       grid-gap: 5px;
+      a:hover {
+        color: rgba(37, 156, 147, 0.8);
+      }
       &.publication-author {
         grid-gap: 15px;
       }
@@ -153,6 +158,12 @@ export default {
       .date {
         font-size: 13px;
         font-style: italic;
+      }
+      a {
+        display: grid;
+        grid-auto-flow: column;
+        place-items: center;
+        grid-gap: 10px;
       }
     }
   }
