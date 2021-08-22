@@ -32,12 +32,6 @@ export default {
     Navbar,
     Portfolio
   },
-  mounted() {
-    this.$nextTick(() => {
-      this.$nuxt.$loading.start();
-      setTimeout(() => this.$nuxt.$loading.finish(), 800);
-    })
-  },
   data() {
     return {
       showDropdown: false

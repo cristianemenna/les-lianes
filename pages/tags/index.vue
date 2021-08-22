@@ -41,15 +41,6 @@ export default {
       tagsList
     };
   },
-  mounted() {
-    // @ts-ignore
-    this.$nextTick(() => {
-      // @ts-ignore
-      this.$nuxt.$loading.start();
-      // @ts-ignore
-      setTimeout(() => this.$nuxt.$loading.finish(), 800);
-    })
-  },
   data() {
     return {
       selectedTag: "",

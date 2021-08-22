@@ -43,12 +43,6 @@ export default {
       showDropdown: false,
     };
   },
-  mounted() {
-    this.$nextTick(() => {
-      this.$nuxt.$loading.start();
-      setTimeout(() => this.$nuxt.$loading.finish(), 800);
-    })
-  },
   async asyncData({ $content, params, error }) {
     let collective;
     try {

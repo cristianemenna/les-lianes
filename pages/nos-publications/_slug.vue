@@ -46,12 +46,6 @@ export default {
       return new Date(date).toLocaleDateString("fr", options);
     },
   },
-  mounted() {
-    this.$nextTick(() => {
-      this.$nuxt.$loading.start();
-      setTimeout(() => this.$nuxt.$loading.finish(), 800);
-    })
-  },
   data() {
     return {
       showDropdown: false,
