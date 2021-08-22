@@ -21,6 +21,14 @@ export default {
     '@/assets/less/fonts.less',
   ],
 
+  loading: '~/components/loading/Loader.vue',
+
+  loadingIndicator: {
+    name: 'circle',
+    color: '#228782',
+    background: 'white',
+  },
+
   components: true,
 
   buildModules: [
@@ -46,6 +54,7 @@ export default {
       })
     },
   },
+
   env: {
     baseUrl: process.env.BASE_URL || 'http://localhost:4000'
   }

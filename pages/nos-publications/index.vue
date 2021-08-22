@@ -14,6 +14,12 @@
 import { Vue, Component } from "vue-property-decorator";
 
 export default {
+  mounted() {
+    this.$nextTick(() => {
+      this.$nuxt.$loading.start();
+      setTimeout(() => this.$nuxt.$loading.finish(), 800);
+    })
+  },
   data() {
     return {
       showDropdown: false

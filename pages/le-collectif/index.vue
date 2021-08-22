@@ -17,7 +17,7 @@
               :key="member.slug"
               :avatar="member.avatar"
               :avatarAlt="member.avatarAlt"
-              :fullName="member.fullName",
+              :fullName="member.fullName"
               :profession="member.role"
             )
     ScrollToTop
@@ -40,8 +40,14 @@ export default {
   },
   data() {
     return {
-      showDropdown: false
+      showDropdown: false,
     };
+  },
+  mounted() {
+    this.$nextTick(() => {
+      this.$nuxt.$loading.start();
+      setTimeout(() => this.$nuxt.$loading.finish(), 800);
+    })
   },
   async asyncData({ $content, params, error }) {
     let collective;
