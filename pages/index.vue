@@ -39,7 +39,7 @@ export default class Index extends Vue {
     };
   }
 
-  async asyncData({ $content, params, error }) {
+  async asyncData({ $content, params, error }: any) {
     let homeBackgroundPhoto;
 
     try {
