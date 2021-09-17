@@ -21,7 +21,8 @@ collections:
       - { label: 'Titre', name: 'title', widget: 'string' }
       - { label: 'Date de publication', name: 'date', widget: 'datetime' }
       - { label: 'Contenu', name: 'description', widget: 'text' }
-      - { label: 'Avatar', name: 'image', widget: 'image' }
+      - { label: 'Photo', name: 'image', widget: 'image' }
+      - { label: 'Crédit de la photo', name: 'imageCredit', widget: 'string' }
       - { label: "Lien vers publication d'origine", name: 'source', widget: 'string', required: false }
       - { label: "Nom du site de la publication d'origine", name: 'sourceName', widget: 'string', required: false }
       - { label: "Vidéo youtube", name: 'video', widget: 'string', required: false }

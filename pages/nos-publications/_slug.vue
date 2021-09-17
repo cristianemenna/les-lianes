@@ -6,6 +6,7 @@
       .publication-container
         .publication-details-container
           img(:src="post.image")
+          p.image-credit(v-if="post.image") {{ post.imageCredit }}
           h1 {{ post.title }}
           .publication-details.publication-author
             a(:href="publicPath+'/le-collectif/'+member[0].slug")
@@ -139,6 +140,13 @@ export default {
       height: 50px;
       object-fit: cover;
       border-radius: 50%;
+    }
+    .image-credit {
+      margin: 0;
+      padding: 0;
+      font-style: italic;
+      font-size: 12px;
+      color: rgba(0, 0, 0, 0.4);
     }
     .publication-details {
       display: grid;

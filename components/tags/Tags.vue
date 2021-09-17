@@ -28,7 +28,7 @@ export default class Tags extends Vue {}
 
 .tag {
   margin-top: 10px;
-  padding: 4px 10px;
+  padding: 3px 10px 5px;
   background-color: rgba(37, 156, 147, 0.6);
   color: #ffffff;
   border-radius: 15px;

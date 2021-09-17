@@ -38,6 +38,7 @@ export default {
 .main-container {
   h1 {
     font-size: 30px;
+    color: #000000;
     @media only screen and (max-width: 800px) {
       font-size: 20px;
     }

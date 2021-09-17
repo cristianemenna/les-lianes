@@ -6,8 +6,8 @@
       .main-container
         a(href="/le-collectif")
           .main-presentation
-            h1 Collectif Les Lianes
-            p Collectif de cinq journalistes et photographes. Nos domaines de prédilection sont la politique internationale, les féministes, l'environnement.
+            h1 COLLECTIF LES LIANES
+            p Nous sommes un collectif de journalistes et de photographes.
 </template>
 
 <script lang="ts">
@@ -47,7 +47,7 @@ export default class Index extends Vue {
   width: 100vw;
   height: 100vh;
   background: #000000;
-  background-image: url("~/assets/img/home2.jpg");
+  background-image: url("~/assets/img/homee.png");
   background-size: cover;
 }
 
@@ -64,7 +64,7 @@ export default class Index extends Vue {
 .main-container {
   display: grid;
   grid-auto-flow: column;
-  grid-template-columns: 1fr 2fr 1.5fr;
+  grid-template-columns: 1fr 2fr 1.8fr;
   place-items: center;
   @media only screen and (max-width: 800px) {
     grid-template-columns: 1fr;
