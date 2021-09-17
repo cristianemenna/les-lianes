@@ -8,6 +8,7 @@ description: >-
 
   Pour lire l’article complet, rendez-vous sur le site de Guyaweb.
 image: /img/De-Cayenne-au-tribunal-de-Créteil.jpg
+imageCredit: Bidon da Silva
 sourceName: Guyaweb 
 source: https://www.guyaweb.com/actualites/news/justice/de-cayenne-au-tribunal-de-creteil-la-route-du-trafic-de-cocaine-1-2/ 
 author: Émilie Jéhanno

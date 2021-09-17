@@ -2,7 +2,7 @@
   .les-lianes
     Navbar(@click="opened => showDropdown = opened")
     DropDownMenu(v-if="showDropdown")
-    .main
+    .main(:style="{ backgroundImage: `url(${photo})` }")
       .main-container
         a(href="/le-collectif")
           .main-presentation
@@ -11,10 +11,12 @@
 </template>
 
 <script lang="ts">
-import { Vue, Component } from "vue-property-decorator";
+import { Vue, Component } from "nuxt-property-decorator";
 import DropDownMenu from "../components/drop-down-menu/DropDownMenu.vue";
 import Navbar from "../components/navbar/Navbar.vue";
 import Footer from "../components/footer/Footer.vue";
+
+Component.registerHooks(["asyncData"]);
 
 @Component({
   components: {
@@ -26,7 +28,7 @@ export default class Index extends Vue {
   public showDropdown = false;
 
   public mounted() {
-    document.getElementsByTagName('html')[0].style.overflow = 'hidden';
+    document.getElementsByTagName("html")[0].style.overflow = "hidden";
   }
 
   public head() {
@@ -36,18 +38,31 @@ export default class Index extends Vue {
       ]
     };
   }
+
+  async asyncData({ $content, params, error }) {
+    let homeBackgroundPhoto;
+
+    try {
+      homeBackgroundPhoto = await $content("photos").fetch();
+    } catch (e) {
+      error({ message: "Photo not found" });
+    }
+
+    const photo = require(`@/static${homeBackgroundPhoto[0].homeBackground}`);
+    return {
+      photo,
+    };
+  }
 }
 </script>
 
 <style lang="less" scoped>
-
 .main {
   position: absolute;
   top: 0;
   width: 100vw;
   height: 100vh;
   background: #000000;
-  background-image: url("~/assets/img/homee.png");
   background-size: cover;
 }
 

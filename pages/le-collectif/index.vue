@@ -4,7 +4,7 @@
     DropDownMenu(v-if="showDropdown")
     .main-container(:class="{ overlay : showDropdown }")
       .collective-container
-        img(src="~/assets/img/home-container.jpg")
+        img(:src="photo")
         .collective-container-content
           h2 Pourquoi « Les Lianes » ?
           p Parce que comme les lianes, on grandit en s’accrochant à un maximum de supports, on multiplie les sources, on les croise, afin de produire une info crédible et vérifiée face aux rumeurs et à la désinformation.
@@ -47,8 +47,10 @@ export default {
   },
   async asyncData({ $content, params, error }) {
     let collective;
+    let photos;
     try {
       collective = await $content("collective").fetch();
+      photos = await $content("photos").fetch();
     } catch (e) {
       error({ message: "Member not found" });
     }
@@ -65,8 +67,11 @@ export default {
       return member1 < member2 ? -1 : member1 > member2 ? 1 : 0;
     });
 
+    const photo = photos[0].home;
+
     return {
-      collective
+      collective,
+      photo,
     };
   }
 };

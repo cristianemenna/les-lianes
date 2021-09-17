@@ -73,3 +73,16 @@ collections:
       preview: false
     fields:
       - { label: 'Tag', name: 'tag', widget: 'string' }
+
+  - name: 'photos'
+    label: 'Photos'
+    folder: 'content/photos'
+    slug: 'photos'
+    label_singular: ' : PHOTOS'
+    create: true
+    editor:
+      preview: false
+    fields:
+      - { label: 'Entrée unique', name: 'title', widget: 'string' }
+      - { label: "Fond de page d'entrée", name: 'homeBackground', widget: 'image' }
+      - { label: "Page d'accueil", name: 'home', widget: 'image' }
