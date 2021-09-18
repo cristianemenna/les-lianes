@@ -180,7 +180,7 @@ export default {
 pre.description {
   white-space: pre-wrap;
   text-align: justify;
-  font-family: "RobotoC" !important;
+  font-family: "Noto" !important;
   margin: 30px 0;
 }
 

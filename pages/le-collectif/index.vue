@@ -6,12 +6,10 @@
       .collective-container
         img(:src="photo")
         .collective-container-content
-          h2 Pourquoi « Les Lianes » ?
-          p Parce que comme les lianes, on grandit en s’accrochant à un maximum de supports, on multiplie les sources, on les croise, afin de produire une info crédible et vérifiée face aux rumeurs et à la désinformation.
-          p Comme elles, on est flexibles sur le terrain. On passe partout pour atteindre notre but : trouver le bon témoignage, avancer dans une enquête… On privilégie les formats longs : l’investigation, le reportage, le documentaire, etc.
-          p Être curieuses, tenaces, rigoureuses sur l’info, indépendantes, voilà ce qui nous ressemble et qui nous rassemble.
+          h2 Pourquoi "les lianes" ?
+          pre.lianesWhy {{ text.lianesWhy }}
           h2 Notre rencontre
-          p Les lianes, comme les liens qui nous unissent, également. Le collectif a germé le 13 avril 2019, lors des premiers Etats généraux des femmes journalistes, à Paris. Cette journée nous a donné envie de nous rassembler entre pigistes féministes. Et de poursuivre ensemble notre travail.
+          pre.lianesMeeting {{ text.lianesMeeting }}
       .members-container
         template(v-for="member of collective")
           a(:href="'/le-collectif/' + member.slug")
@@ -42,17 +40,19 @@ export default {
   },
   data() {
     return {
-      showDropdown: false,
+      showDropdown: false
     };
   },
   async asyncData({ $content, params, error }) {
     let collective;
     let photos;
+    let text;
     try {
       collective = await $content("collective").fetch();
       photos = await $content("photos").fetch();
+      text = await $content("textes").fetch();
     } catch (e) {
-      error({ message: "Member not found" });
+      error({ message: "Content not found" });
     }
 
     collective = collective.sort((m1, m2) => {
@@ -68,10 +68,12 @@ export default {
     });
 
     const photo = photos[0].home;
+    text = text[0];
 
     return {
       collective,
       photo,
+      text
     };
   }
 };
@@ -119,5 +121,12 @@ export default {
     box-shadow: 1px 1px 4px 1px rgba(0, 0, 0, 0.2);
     border-radius: 10px;
   }
+}
+
+pre {
+  white-space: pre-wrap;
+  text-align: justify;
+  font-family: "Noto" !important;
+  white-space: pre-line;
 }
 </style>

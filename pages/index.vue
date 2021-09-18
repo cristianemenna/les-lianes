@@ -7,7 +7,7 @@
         a(href="/le-collectif")
           .main-presentation
             h1 COLLECTIF LES LIANES
-            p Nous sommes un collectif de journalistes et de photographes.
+            p {{ text.homeIntroduction }}
 </template>
 
 <script lang="ts">
@@ -41,16 +41,21 @@ export default class Index extends Vue {
 
   async asyncData({ $content, params, error }: any) {
     let homeBackgroundPhoto;
+    let text;
 
     try {
       homeBackgroundPhoto = await $content("photos").fetch();
+      text = await $content("textes").fetch();
     } catch (e) {
-      error({ message: "Photo not found" });
+      error({ message: "Content not found" });
     }
 
     const photo = require(`@/static${homeBackgroundPhoto[0].homeBackground}`);
+    text = text[0];
+
     return {
       photo,
+      text,
     };
   }
 }

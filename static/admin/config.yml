@@ -83,6 +83,20 @@ collections:
     editor:
       preview: false
     fields:
-      - { label: 'Entrée unique', name: 'title', widget: 'string' }
+      - { label: 'Section', name: 'title', widget: 'string' }
       - { label: "Fond de page d'entrée", name: 'homeBackground', widget: 'image' }
       - { label: "Page d'accueil", name: 'home', widget: 'image' }
+
+  - name: 'textes'
+    label: 'Textes'
+    folder: 'content/textes'
+    slug: 'textes'
+    label_singular: ' : TEXTES'
+    create: true
+    editor:
+      preview: false
+    fields:
+      - { label: 'Section', name: 'title', widget: 'string' }
+      - { label: "Présentation sur la page d'entrée", name: 'homeIntroduction', widget: 'text' }
+      - { label: "Pourquoi Les Lianes ?", name: 'lianesWhy', widget: 'text' }
+      - { label: "Notre rencontre", name: 'lianesMeeting', widget: 'text' }
