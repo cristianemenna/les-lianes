@@ -44,6 +44,7 @@ export default {
   },
 
   build: {
+    friendlyErrors: false,
     extend(config, ctx) {
       config.module.rules.push({
         test: /\.(ogg|mp3|wav|mpe?g)$/i,
