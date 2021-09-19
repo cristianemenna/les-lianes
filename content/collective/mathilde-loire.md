@@ -1,8 +1,15 @@
 ---
 fullName: Mathilde Loire
 role: Journaliste multimédia
-description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-email: loremipsum@gmail.com
+description: "Depuis 2015, Mathilde travaille sur la culture, le numérique et
+  les sociétés au sens large : nouveaux usages, questions féministes, LGBTQI+,
+  d'éducation et de santé. Sa passion : explorer Internet et ses communautés, et
+  décrypter les pratiques de fan, les représentations dans la culture et
+  l’industrie du divertissement. Diplômée du CUEJ de Strasbourg, elle a
+  travaillé en presse web, locale et jeunesse, comme rédactrice et secrétaire de
+  rédaction, et a réalisé quelques reportages en Asie. Elle est régulièrement SR
+  chez Télérama et deskeuse pour le site de L'Express."
+email: matloire@gmail.com
 avatarAlt: Mathilde Loire
 avatar: /img/mathilde-loire.jpg
 ---

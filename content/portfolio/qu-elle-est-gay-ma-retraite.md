@@ -16,10 +16,12 @@ description: >-
 
 
   Pour lire l’article complet rendez-vous sur le site de Causette.
-image: /img/qu_elle-est-gay-ma-retraite-1-1024x768.jpg
-sourceName: Causette 
+image: /img/qu-elle-est-gay-ma-retraite.jpg
+imageAlt: "Photo d'une chambre ensoleillée "
 source: https://www.causette.fr/
+sourceName: Causette
 author: Émilie Jéhanno
+avatarAlt: chambre-ensoleillée
 tag:
   - LGBTQ+
   - Société

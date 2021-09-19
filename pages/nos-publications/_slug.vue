@@ -5,7 +5,7 @@
     .main-container(:class="{ overlay : showDropdown }")
       .publication-container
         .publication-details-container
-          img(:src="post.image")
+          img(:src="post.image" :alt="post.imageAlt")
           p.image-credit(v-if="post.image") {{ post.imageCredit }}
           h1 {{ post.title }}
           .publication-details.publication-author

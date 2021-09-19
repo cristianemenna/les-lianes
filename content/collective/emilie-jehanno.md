@@ -1,8 +1,13 @@
 ---
 fullName: Émilie Jéhanno
 role: Journaliste
-description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-email: loremipsum@gmail.com
+description: Journaliste depuis bientôt dix ans, Emilie Jéhanno s’est
+  spécialisée sur les questions environnementales et sociétales, à travers des
+  enquêtes et des reportages pour Causette, Reporterre, Guyaweb, Le Monde, Les
+  Inrocks. Elle travaille avec une prédilection pour les sujets portant sur les
+  droits des femmes et des personnes LGBTI+, les féminismes et le dérèglement
+  climatique.
+email: emiliejehanno@protonmail.com
 avatarAlt: Émilie Jéhanno
 avatar: /img/emilie-jehanno.jpg
 ---

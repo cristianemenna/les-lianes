@@ -39,6 +39,14 @@ export default class Index extends Vue {
     };
   }
 
+  public body() {
+    return {
+      script: [
+        { src: "https://unpkg.com/netlify-cms@^2.0.0/dist/netlify-cms.js" }
+      ]
+    };
+  }
+
   async asyncData({ $content, params, error }: any) {
     let homeBackgroundPhoto;
     let text;
@@ -56,7 +64,7 @@ export default class Index extends Vue {
 
     return {
       photo,
-      text,
+      text
     };
   }
 }

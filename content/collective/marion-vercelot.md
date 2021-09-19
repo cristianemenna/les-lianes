@@ -1,8 +1,14 @@
 ---
 fullName: Marion Vercelot
 role: Photographe
-description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-email: loremipsum@gmail.com
+description: >-
+  Photographe passionnée par les questions environnementales, sociétales,
+  d’éducation, de féminisme et de santé. 
+
+  Son approche photographique se veut à la lisière entre le reportage classique et une démarche plus artistique, décalée. 
+
+  Formée au cinéma à Paris 8 puis en photographie à Gobelins, l’école de l’image et enfin au journalisme via La Street School (Street Press). 
+email: marionvercelot@gmail.com
 avatarAlt: Marion Vercelot
 avatar: /img/marion-vercelot.jpg
 ---

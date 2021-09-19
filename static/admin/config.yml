@@ -22,7 +22,8 @@ collections:
       - { label: 'Date de publication', name: 'date', widget: 'datetime' }
       - { label: 'Contenu', name: 'description', widget: 'text' }
       - { label: 'Photo', name: 'image', widget: 'image' }
-      - { label: 'Crédit de la photo', name: 'imageCredit', widget: 'string' }
+      - { label: 'Crédit de la photo', name: 'imageCredit', widget: 'string', required: false }
+      - { label: 'Description de la photo', name: 'imageAlt', widget: 'string', required: false }
       - { label: "Lien vers publication d'origine", name: 'source', widget: 'string', required: false }
       - { label: "Nom du site de la publication d'origine", name: 'sourceName', widget: 'string', required: false }
       - { label: "Vidéo youtube", name: 'video', widget: 'string', required: false }
@@ -57,7 +58,7 @@ collections:
     fields:
       - { label: 'Nom/Prénom', name: 'fullName', widget: 'string' }
       - { label: 'Fonction', name: 'role', widget: 'string' }
-      - { label: 'Texte de présentation', name: 'description', widget: 'string' }
+      - { label: 'Texte de présentation', name: 'description', widget: 'text' }
       - { label: 'Mail', name: 'email', widget: 'string' }
       - { label: 'Description image', name: 'avatarAlt', widget: 'string' }
       - { label: 'Image de profil', name: 'avatar', widget: 'image' }
