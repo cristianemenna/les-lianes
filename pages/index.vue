@@ -45,11 +45,12 @@ export default class Index extends Vue {
 
     try {
       homeBackgroundPhoto = await $content("photos").fetch();
-      text = await $content("textes").fetch();
+      text = await $content("texts").fetch();
     } catch (e) {
       error({ message: "Content not found" });
     }
 
+    // @ts-ignore
     const photo = require(`@/static${homeBackgroundPhoto[0].homeBackground}`);
     text = text[0];
 

@@ -87,16 +87,21 @@ collections:
       - { label: "Fond de page d'entrée", name: 'homeBackground', widget: 'image' }
       - { label: "Page d'accueil", name: 'home', widget: 'image' }
 
-  - name: 'textes'
+  - name: 'texts'
     label: 'Textes'
-    folder: 'content/textes'
-    slug: 'textes'
+    folder: 'content/texts'
+    slug: 'texts'
     label_singular: ' : TEXTES'
     create: true
     editor:
       preview: false
     fields:
-      - { label: 'Section', name: 'title', widget: 'string' }
+      - { label: 'Section', name: 'sectionTitle', widget: 'string' }
       - { label: "Présentation sur la page d'entrée", name: 'homeIntroduction', widget: 'text' }
-      - { label: "Pourquoi Les Lianes ?", name: 'lianesWhy', widget: 'text' }
-      - { label: "Notre rencontre", name: 'lianesMeeting', widget: 'text' }
+      - label: "Bloques de texte sur page d'accueil"
+        name: 'contentBlock'
+        widget: 'list'
+        max: 3
+        fields:
+          - { label: 'Titre', name: 'title', widget: 'string' }
+          - { label: 'Contenu', name: 'content', widget: 'text' }

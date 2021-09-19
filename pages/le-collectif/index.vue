@@ -6,10 +6,9 @@
       .collective-container
         img(:src="photo")
         .collective-container-content
-          h2 Pourquoi "les lianes" ?
-          pre.lianesWhy {{ text.lianesWhy }}
-          h2 Notre rencontre
-          pre.lianesMeeting {{ text.lianesMeeting }}
+          template(v-for="text of texts")
+            h2 {{ text.title }}
+            pre {{ text.content }}
       .members-container
         template(v-for="member of collective")
           a(:href="'/le-collectif/' + member.slug")
@@ -46,11 +45,11 @@ export default {
   async asyncData({ $content, params, error }) {
     let collective;
     let photos;
-    let text;
+    let texts;
     try {
       collective = await $content("collective").fetch();
       photos = await $content("photos").fetch();
-      text = await $content("textes").fetch();
+      texts = await $content("texts").fetch();
     } catch (e) {
       error({ message: "Content not found" });
     }
@@ -68,12 +67,12 @@ export default {
     });
 
     const photo = photos[0].home;
-    text = text[0];
+    texts = texts[0].contentBlock;
 
     return {
       collective,
       photo,
-      text
+      texts,
     };
   }
 };
