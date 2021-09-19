@@ -43,6 +43,10 @@ export default {
     port: 4000,
   },
 
+  generate: {
+    fallback: true,
+  },
+
   build: {
     friendlyErrors: false,
     extend(config, ctx) {
