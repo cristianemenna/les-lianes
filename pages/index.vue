@@ -78,6 +78,9 @@ export default class Index extends Vue {
   height: 100vh;
   background: #000000;
   background-size: cover;
+  @media only screen and (max-width: 800px) {
+    background-position: 50% 50%;
+  }
 }
 
 /deep/ .navbar {

@@ -33,24 +33,26 @@ import DropDownMenu from "../../components/drop-down-menu/DropDownMenu.vue";
 import Footer from "../../components/footer/Footer.vue";
 import Navbar from "../../components/navbar/Navbar.vue";
 import Portfolio from "../../components/portfolio/Portfolio.vue";
+import ScrollToTop from "../../components/scroll-to-top/ScrollToTop.vue";
 
 export default {
   components: {
     DropDownMenu,
     Footer,
     Navbar,
-    Portfolio
+    Portfolio,
+    ScrollToTop
   },
   methods: {
     formatDate(date) {
       const options = { year: "numeric", month: "long", day: "numeric" };
       return new Date(date).toLocaleDateString("fr", options);
-    },
+    }
   },
   data() {
     return {
       showDropdown: false,
-      publicPath: process.env.baseUrl,
+      publicPath: process.env.baseUrl
     };
   },
   async asyncData({ $content, params, error }) {
@@ -159,6 +161,9 @@ export default {
       }
       &.publication-author {
         grid-gap: 15px;
+        @media only screen and (max-width: 800px) {
+          grid-gap: 5px;
+        }
       }
       .separator {
         font-weight: bold;
@@ -166,6 +171,9 @@ export default {
       .date {
         font-size: 13px;
         font-style: italic;
+        @media only screen and (max-width: 800px) {
+          font-size: 11px;
+        }
       }
       a {
         display: grid;

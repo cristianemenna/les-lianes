@@ -24,6 +24,12 @@ export default class Portfolio extends Vue {
   public portfolio!: any[];
 
   public itemsToShow = 9;
+
+  public created() {
+    if (this.portfolio.length < this.itemsToShow) {
+      this.itemsToShow = this.portfolio.length;
+    }
+  }
 }
 </script>
 
