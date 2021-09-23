@@ -5,7 +5,8 @@
         .portfolio-item
           a(:href="'/nos-publications/' + portfolio[itemIndex - 1].slug")
             img(:src="portfolio[itemIndex -1].image")
-            Tags(:tags="portfolio[itemIndex -1].tag" link)
+          Tags(:tags="portfolio[itemIndex -1].tag" link)
+          a(:href="'/nos-publications/' + portfolio[itemIndex - 1].slug")
             p {{ portfolio[itemIndex -1].title }}
     .showMore(v-if="itemsToShow < portfolio.length" @click="itemsToShow += 3") Voir plus
 </template>
@@ -48,6 +49,13 @@ export default class Portfolio extends Vue {
   &:hover {
     cursor: pointer;
     background-color: rgba(37, 156, 147, 0.8);
+  }
+}
+
+.portfolio-item {
+  margin-bottom: 60px;
+  p {
+    margin-top: 10px;
   }
 }
 </style>
