@@ -40,6 +40,7 @@ export default {
   ],
 
   server: {
+    // host: '192.168.1.13',
     port: 4000,
   },
 

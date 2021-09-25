@@ -1,13 +1,13 @@
 <template lang="pug">
   .portfolio-wrapper
-    template(v-for="itemIndex in itemsToShow")
-      template(v-if="itemIndex <= portfolio.length")
-        .portfolio-item
-          a(:href="'/nos-publications/' + portfolio[itemIndex - 1].slug")
-            img(:src="portfolio[itemIndex -1].image")
-          Tags(:tags="portfolio[itemIndex -1].tag" link)
-          a(:href="'/nos-publications/' + portfolio[itemIndex - 1].slug")
-            p {{ portfolio[itemIndex -1].title }}
+    //- template(v-for="itemIndex in itemsToShow")
+    //-   template(v-if="itemIndex <= portfolio.length")
+    //-     .portfolio-item
+    //-       a(:href="'/nos-publications/' + portfolio[itemIndex - 1].slug")
+    //-         img(:src="portfolio[itemIndex -1].image")
+    //-       Tags(:tags="portfolio[itemIndex -1].tag" link)
+    //-       a(:href="'/nos-publications/' + portfolio[itemIndex - 1].slug")
+    //-         p {{ portfolio[itemIndex -1].title }}
     .showMore(v-if="itemsToShow < portfolio.length" @click="itemsToShow += 3") Voir plus
 </template>
 
