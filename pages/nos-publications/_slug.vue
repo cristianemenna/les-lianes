@@ -3,7 +3,7 @@
   Navbar(@click="(opened) => (showDropdown = opened)")
   DropDownMenu(v-if="showDropdown")
   .main-container(:class="{ overlay: showDropdown }")
-    .publication-container
+    .publication-container(v-if="post")
       .publication-details-container
         img(:src="post.image", :alt="post.imageAlt")
         p.image-credit(v-if="post.image") {{ post.imageCredit }}
@@ -23,7 +23,7 @@
           a(:href="post.source", target="_blank") {{  post.sourceName ? post.sourceName : "Publication d'origine" }}
     .author-related-content(v-if="portfolio.length")
       h2 Publications de la même autrice
-      Portfolio(v-if="portfolioTimedout", :portfolio="portfolio")
+      Portfolio(v-if="portfolio" :portfolio="portfolio")
   ScrollToTop
   Footer
 </template>
@@ -52,12 +52,8 @@ export default {
   data() {
     return {
       showDropdown: false,
-      portfolioTimedout: false,
       publicPath: process.env.baseUrl,
     };
-  },
-  created() {
-    setTimeout(() => (this.portfolioTimedout = true), 3000);
   },
   async asyncData({ $content, params, error }) {
     let post;
@@ -91,7 +87,7 @@ export default {
       let toRemove = "/static";
       post.audio = post.audio.replace(toRemove, "");
     }
-    console.log("slug", portfolio.length, portfolio);
+    await console.log("slug", portfolio.length, portfolio);
 
     return {
       post,
