@@ -7,7 +7,6 @@ description: En avril 2019, en Lituanie, j'ai rencontré Algis Stakenas, 81 ans.
 image: /img/algis.jpg
 imageCredit: E. Roulin
 imageAlt: Homme et femme souriants
-audio: ""
 author: Emma Roulin
 tag:
   - International

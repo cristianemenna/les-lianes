@@ -44,7 +44,6 @@ description: >
 
   Le potentiel de l’industrie pharmaceutique nigériane tant loué par les cabinets d’expertise ne semble donc pas profiter aux professionnels du pays. Il aiguise en revanche l’appétit de producteurs de génériques étrangers. Ainsi, sont désormais installées au Nigeria l’Indienne Cipla mais aussi la Française Ranbaxy, la Sud-africaine Aspen et l’Américaine Mylan… L’an dernier, Biogaran, filiale de Servier, a racheté la pourtant très reconnue nigériane Swipha qui manquait de moyens financiers. Dans la presse, l’entreprise s’est enthousiasmée de pouvoir enfin « mettre un pied en Afrique de l’Ouest ». Chacun essaie de s’y tailler la part du lion. Laissant loin le doux rêve d’un pays autosuffisant dans la production de médicaments accessibles à tous.
 image: /img/production-generiques-nigeria.jpg
-imageCredit: ""
 imageAlt: Photo d'un marché
 author: Adama Sissoko
 tag:
