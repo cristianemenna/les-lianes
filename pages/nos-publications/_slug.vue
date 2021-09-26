@@ -1,31 +1,31 @@
 <template lang="pug">
-  .portfolio-item
-    Navbar(@click="opened => showDropdown = opened")
-    DropDownMenu(v-if="showDropdown")
-    .main-container(:class="{ overlay : showDropdown }")
-      .publication-container
-        .publication-details-container
-          img(:src="post.image" :alt="post.imageAlt")
-          p.image-credit(v-if="post.image") {{ post.imageCredit }}
-          h1 {{ post.title }}
-          .publication-details.publication-author
-            a(:href="publicPath+'/le-collectif/'+member[0].slug")
-              img.avatar(:src="member[0].avatar" :alt="member[0].avatarAlt")
-              span {{ post.author }}
-            span.separator ⸱
-            span.date {{ formatDate(post.date) }}
-          pre.description {{ post.description }}
-          iframe(v-if="post.video" :src="post.video" allowfullscreen)
-          audio(v-if="post.audio" controls :src="post.audio")
-          .publication-details(v-if="post.source")
-            img(src="~/assets/icons/link-icon.svg")
-            span A retrouver sur :
-            a(:href="post.source" target="_blank") {{ post.sourceName ? post.sourceName : "Publication d'origine"}}
-      .author-related-content(v-if="portfolio.length")
-        h2 Publications de la même autrice
-        Portfolio(:portfolio="portfolio")
-    ScrollToTop
-    Footer
+.portfolio-item
+  Navbar(@click="(opened) => (showDropdown = opened)")
+  DropDownMenu(v-if="showDropdown")
+  .main-container(:class="{ overlay: showDropdown }")
+    .publication-container
+      .publication-details-container
+        img(:src="post.image", :alt="post.imageAlt")
+        p.image-credit(v-if="post.image") {{ post.imageCredit }}
+        h1 {{ post.title }}
+        .publication-details.publication-author
+          a(:href="publicPath + '/le-collectif/' + member[0].slug")
+            img.avatar(:src="member[0].avatar", :alt="member[0].avatarAlt")
+            span {{ post.author }}
+          span.separator ⸱
+          span.date {{ formatDate(post.date) }}
+        pre.description {{ post.description }}
+        iframe(v-if="post.video", :src="post.video", allowfullscreen)
+        audio(v-if="post.audio", controls, :src="post.audio")
+        .publication-details(v-if="post.source")
+          img(src="~/assets/icons/link-icon.svg")
+          span A retrouver sur :
+          a(:href="post.source", target="_blank") {{  post.sourceName ? post.sourceName : "Publication d'origine" }}
+    .author-related-content(v-if="portfolio.length")
+      h2 Publications de la même autrice
+      Portfolio(v-if="portfolioTimedout", :portfolio="portfolio")
+  ScrollToTop
+  Footer
 </template>
 
 <script>
@@ -41,19 +41,23 @@ export default {
     Footer,
     Navbar,
     Portfolio,
-    ScrollToTop
+    ScrollToTop,
   },
   methods: {
     formatDate(date) {
       const options = { year: "numeric", month: "long", day: "numeric" };
       return new Date(date).toLocaleDateString("fr", options);
-    }
+    },
   },
   data() {
     return {
       showDropdown: false,
-      publicPath: process.env.baseUrl
+      portfolioTimedout: false,
+      publicPath: process.env.baseUrl,
     };
+  },
+  created() {
+    setTimeout(() => (this.portfolioTimedout = true), 3000);
   },
   async asyncData({ $content, params, error }) {
     let post;
@@ -64,15 +68,15 @@ export default {
       member = await $content("collective")
         .where({
           fullName: {
-            $eq: post.author
-          }
+            $eq: post.author,
+          },
         })
         .fetch();
       portfolio = await $content("portfolio")
         .where({
           author: {
-            $eq: post.author
-          }
+            $eq: post.author,
+          },
         })
         .fetch();
     } catch (e) {
@@ -80,20 +84,21 @@ export default {
     }
 
     // removing current post of author posts list
-    const index = await portfolio.findIndex(p => p.date === post.date);
+    const index = await portfolio.findIndex((p) => p.date === post.date);
     await portfolio.splice(index, 1);
 
     if (post.audio) {
       let toRemove = "/static";
       post.audio = post.audio.replace(toRemove, "");
     }
+    console.log("slug", portfolio.length, portfolio);
 
     return {
       post,
       portfolio,
-      member
+      member,
     };
-  }
+  },
 };
 </script>
 
