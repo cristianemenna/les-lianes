@@ -20,10 +20,10 @@
         .publication-details(v-if="post.source")
           img(src="~/assets/icons/link-icon.svg")
           span A retrouver sur :
-          a(:href="post.source", target="_blank") {{  post.sourceName ? post.sourceName : "Publication d'origine" }}
-    .author-related-content(v-if="portfolio.length")
+          a(:href="post.source", target="_blank") {{  post.sourceName ? post.sourceName : "Publication d'origine"  }}
+    .author-related-content(v-if="portfolio && portfolio.length")
       h2 Publications de la même autrice
-      Portfolio(v-if="portfolio" :portfolio="portfolio")
+      Portfolio(:portfolio="portfolio")
   ScrollToTop
   Footer
 </template>
@@ -81,13 +81,14 @@ export default {
 
     // removing current post of author posts list
     const index = await portfolio.findIndex((p) => p.date === post.date);
-    await portfolio.splice(index, 1);
+    if (portfolio.length > 1) {
+      await portfolio.splice(index, 1);
+    }
 
     if (post.audio) {
       let toRemove = "/static";
       post.audio = post.audio.replace(toRemove, "");
     }
-    await console.log("slug", portfolio.length, portfolio);
 
     return {
       post,
