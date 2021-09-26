@@ -3,9 +3,10 @@
     template(v-for="itemIndex in itemsToShow")
       template(v-if="itemIndex <= portfolio.length")
         .portfolio-item
+          span {{ itemIndex }}
           a(:href="'/nos-publications/' + portfolio[itemIndex - 1].slug")
             img(:src="portfolio[itemIndex -1].image")
-          Tags(:tags="portfolio[itemIndex -1].tag" link)
+          //- Tags(:tags="portfolio[itemIndex -1].tag" link)
           a(:href="'/nos-publications/' + portfolio[itemIndex - 1].slug")
             p {{ portfolio[itemIndex -1].title }}
     .showMore(v-if="itemsToShow < portfolio.length" @click="itemsToShow += 3") Voir plus
@@ -21,7 +22,7 @@ import Tags from "../tags/Tags.vue";
   }
 })
 export default class Portfolio extends Vue {
-  @Prop()
+  @Prop({ required: true })
   public portfolio!: any[];
 
   public itemsToShow = 9;
