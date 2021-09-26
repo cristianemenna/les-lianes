@@ -30,7 +30,6 @@ export default class Portfolio extends Vue {
     if (this.portfolio.length < this.itemsToShow) {
       this.itemsToShow = this.portfolio.length;
     }
-    console.log("portfolio", this.portfolio.length, this.portfolio);
   }
 }
 </script>
