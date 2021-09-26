@@ -80,8 +80,8 @@ export default {
     }
 
     // removing current post of author posts list
-    const index = portfolio.findIndex(p => p.date === post.date);
-    portfolio.splice(index, 1);
+    const index = await portfolio.findIndex(p => p.date === post.date);
+    await portfolio.splice(index, 1);
 
     if (post.audio) {
       let toRemove = "/static";
