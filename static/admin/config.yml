@@ -28,6 +28,15 @@ collections:
       - { label: "Nom du site de la publication d'origine", name: 'sourceName', widget: 'string', required: false }
       - { label: "Vidéo youtube", name: 'video', widget: 'string', required: false }
       - { label: "Audio", name: 'audio', widget: 'file', required: false }
+      - { 
+          label: "Caroussel de photos", 
+          name: 'carousel', 
+          widget: 'relation',
+          collection: "carousel",
+          search_fields: ['title'],
+          value_field: 'title',
+          required: false 
+        }
       - {
           label: 'Publié par',
           name: 'author',
@@ -106,3 +115,20 @@ collections:
         fields:
           - { label: 'Titre', name: 'title', widget: 'string' }
           - { label: 'Contenu', name: 'content', widget: 'text' }
+
+  - name: 'carousel'
+    label: 'Caroussel de photos'
+    folder: 'content/carousel'
+    slug: '{{slug}}'
+    label_singular: ' : CAROUSSEL'
+    create: true
+    editor:
+      preview: false
+    fields:
+      - { label: 'Nom', name: 'title', widget: 'string' }
+      - label: 'Photos'
+        name: 'photos'
+        widget: 'list'
+        fields:  
+          - { label: 'Photo', name: 'photo', widget: 'image' }
+          - { label: 'Description de la photo', name: 'photoAlt', widget: 'string' }

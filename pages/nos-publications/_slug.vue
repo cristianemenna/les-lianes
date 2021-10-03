@@ -21,6 +21,12 @@
           img(src="~/assets/icons/link-icon.svg")
           span A retrouver sur :
           a(:href="post.source", target="_blank") {{  post.sourceName ? post.sourceName : "Publication d'origine"  }}
+        .publication-carousel(v-if="carousel")
+          img(
+            v-for="photo of carousel" 
+            :src="photo.photo",
+            :alt="photo.alt"
+          )
     .author-related-content(v-if="portfolio && portfolio.length")
       h2 Publications de la même autrice
       Portfolio(:portfolio="portfolio")
@@ -88,7 +94,25 @@ export default {
       post.audio = post.audio.replace(toRemove, "");
     }
 
+    let carousel;
+    if (post.carousel) {
+      try {
+        carousel = await $content("carousel")
+          .where({
+            title: {
+              $eq: post.carousel,
+            },
+          })
+          .fetch();
+          console.log(carousel[0]);
+        carousel = carousel[0].photos;  
+      } catch (e) {
+        error({ message: "Carousel not found" });
+      }
+    }
+
     return {
+      carousel,
       post,
       portfolio,
       member,
