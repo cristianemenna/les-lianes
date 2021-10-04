@@ -16,7 +16,12 @@
           span.date {{ formatDate(post.date) }}
         pre.description {{ post.description }}
         iframe(v-if="post.video", :src="post.video", allowfullscreen)
-        audio(v-if="post.audio", controls, :src="post.audio")
+        .publication-audios(v-if="audios")
+          audio(
+            v-for="audio of audios"
+            controls
+            :src="audio.audio"
+          )
         .publication-details(v-if="post.source")
           img(src="~/assets/icons/link-icon.svg")
           span A retrouver sur :
@@ -85,13 +90,20 @@ export default {
       error({ message: "Post not found" });
     }
 
-    // removing current post of author posts list
-    const index = await portfolio.findIndex((p) => p.date === post.date);
-    await portfolio.splice(index, 1);
-
-    if (post.audio) {
-      let toRemove = "/static";
-      post.audio = post.audio.replace(toRemove, "");
+    let audios;
+    if (post.audios) {
+      try {
+        audios = await $content("audios")
+          .where({
+            title: {
+              $eq: post.audios,
+            },
+          })
+          .fetch();
+        audios = audios[0].audios;  
+      } catch (e) {
+        error({ message: "Audios not found" });
+      }
     }
 
     let carousel;
@@ -104,14 +116,18 @@ export default {
             },
           })
           .fetch();
-          console.log(carousel[0]);
         carousel = carousel[0].photos;  
       } catch (e) {
         error({ message: "Carousel not found" });
       }
     }
 
+    // removing current post of author posts list
+    const index = await portfolio.findIndex((p) => p.date === post.date);
+    await portfolio.splice(index, 1);
+
     return {
+      audios,
       carousel,
       post,
       portfolio,
@@ -230,5 +246,10 @@ pre.description {
     font-size: 20px;
     margin: 50px 0;
   }
+}
+
+.publication-audios {
+  display: grid;
+  grid-auto-flow: row;
 }
 </style>

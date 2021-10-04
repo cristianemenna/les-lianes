@@ -27,7 +27,16 @@ collections:
       - { label: "Lien vers publication d'origine", name: 'source', widget: 'string', required: false }
       - { label: "Nom du site de la publication d'origine", name: 'sourceName', widget: 'string', required: false }
       - { label: "Vidéo youtube", name: 'video', widget: 'string', required: false }
-      - { label: "Audio", name: 'audio', widget: 'file', required: false }
+      # - { label: "Audio", name: 'audio', widget: 'file', required: false }
+      - { 
+          label: "Audio",
+          name: 'media',
+          widget: 'relation',
+          collection: "audios",
+          search_fields: ['title'],
+          value_field: 'title',
+          required: false
+        }
       - { 
           label: "Caroussel de photos", 
           name: 'carousel', 
@@ -116,6 +125,22 @@ collections:
           - { label: 'Titre', name: 'title', widget: 'string' }
           - { label: 'Contenu', name: 'content', widget: 'text' }
 
+  - name: 'audios'
+    label: 'Audios'
+    folder: 'content/audios'
+    slug: '{{slug}}'
+    label_singular: ' : AUDIOS'
+    create: true
+    editor:
+      preview: false
+    fields:
+      - { label: 'Nom', name: 'title', widget: 'string' }
+      - label: 'Audios'
+        name: 'audios'
+        widget: 'list'
+        fields:  
+          - { label: 'Audio', name: 'audio', widget: 'file' }
+          
   - name: 'carousel'
     label: 'Caroussel de photos'
     folder: 'content/carousel'
