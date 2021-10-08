@@ -13,6 +13,7 @@ imageCredit: E. Roulin
 imageAlt: Jeune femme assise sur un lit
 source: http://www.rfi.fr/fr/emission/20170626-allemagne-iles-halligen-montee-eaux-disparition-climat-rechauffement-fonte-glaces
 sourceName: À écouter ici
+carousel: Emma - Reportages sur les migrants mineurs à Paris
 author: Emma Roulin
 tag:
   - France

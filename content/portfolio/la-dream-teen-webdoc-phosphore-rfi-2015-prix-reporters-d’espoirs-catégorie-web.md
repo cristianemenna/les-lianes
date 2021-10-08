@@ -19,9 +19,11 @@ description: >-
 
   Ce webdoc a obtenu le prix reporters d’espoirs (catégorie web) en 2015.
 image: /img/ladreamteen.jpg
-imageCredit: E. Roulin (photo)
+imageCredit: E. Roulin (photo) / I. Anneix (Illustrations)
 source: http://dreamteen.phosphore.com/
 sourceName: Webdoc
+carousel: Emma - La Dream Teen Webdoc - Phosphore / RFI - 2015 Prix Reporters
+  d’espoirs catégorie web
 author: Emma Roulin
 tag:
   - France
