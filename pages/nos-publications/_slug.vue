@@ -32,8 +32,8 @@
           img(
             v-for="(photo, i) in carousel"
             :key="i"
-            :src="photo.photo",
-            :alt="photo.alt"
+            :src="photo.photo"
+            :alt="photo.photoAlt"
             @click="selection = photo"
           )
     .author-related-content(v-if="portfolio && portfolio.length")
@@ -42,8 +42,8 @@
   .image-view(v-if="selection")
     img.close-icon(src="~/assets/icons/close.svg" @click="selection = ''")
     img.photo(
-      :src="selection.photo",
-      :alt="selection.alt"
+      :src="selection.photo"
+      :alt="selection.photoAlt"
     )
   ScrollToTop
   Footer
@@ -271,10 +271,13 @@ pre.description {
 .publication-carousel {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  align-items: center;
+  grid-gap: 15px;
   margin: 50px 0;
   :hover {
     cursor: pointer;
+  }
+  @media only screen and (max-width: 800px) {
+    grid-template-columns: 1fr;
   }
 }
 
@@ -288,20 +291,20 @@ pre.description {
   background-color: rgba(204, 218, 220, 0.9);
   display: grid;
   grid-auto-columns: 1fr;
-  grid-auto-rows: 1fr;
+  grid-auto-rows: 50px auto;
   place-items: center;
   img.photo {
-    max-height: 100vh;
+    max-height: 100vh - 15%;
     max-width: 100vw;
     @media only screen and (max-width: 800px) {
       width: 100%;
     }
   }
   .close-icon {
-    width: 30px;
-    position: fixed;
-    top: 50px;
-    right: 50px;
+    width: 25px;
+    place-self: end;
+    align-self: end;
+    margin-right: 30px;
     &:hover {
       cursor: pointer;
     }
