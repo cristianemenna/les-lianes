@@ -18,8 +18,9 @@
         iframe(v-if="post.video", :src="post.video", allowfullscreen)
         .publication-audios(v-if="audios")
           audio(
-            v-for="audio of audios"
+            v-for="(audio, i) in audios"
             controls
+            :key="i"
             :src="audio.audio"
           )
         .publication-details(v-if="post.source")
@@ -28,13 +29,21 @@
           a(:href="post.source", target="_blank") {{  post.sourceName ? post.sourceName : "Publication d'origine"  }}
         .publication-carousel(v-if="carousel")
           img(
-            v-for="photo of carousel" 
+            v-for="(photo, i) in carousel"
+            :key="i"
             :src="photo.photo",
             :alt="photo.alt"
+            @click="selection = photo"
           )
     .author-related-content(v-if="portfolio && portfolio.length")
       h2 Publications de la même autrice
       Portfolio(:portfolio="portfolio")
+  .image-view(v-if="selection")
+    img.close-icon(src="~/assets/icons/close.svg" @click="selection = ''")
+    img.photo(
+      :src="selection.photo",
+      :alt="selection.alt"
+    )
   ScrollToTop
   Footer
 </template>
@@ -52,18 +61,19 @@ export default {
     Footer,
     Navbar,
     Portfolio,
-    ScrollToTop,
+    ScrollToTop
   },
   methods: {
     formatDate(date) {
       const options = { year: "numeric", month: "long", day: "numeric" };
       return new Date(date).toLocaleDateString("fr", options);
-    },
+    }
   },
   data() {
     return {
       showDropdown: false,
       publicPath: process.env.baseUrl,
+      selection: ""
     };
   },
   async asyncData({ $content, params, error }) {
@@ -75,15 +85,15 @@ export default {
       member = await $content("collective")
         .where({
           fullName: {
-            $eq: post.author,
-          },
+            $eq: post.author
+          }
         })
         .fetch();
       portfolio = await $content("portfolio")
         .where({
           author: {
-            $eq: post.author,
-          },
+            $eq: post.author
+          }
         })
         .fetch();
     } catch (e) {
@@ -96,11 +106,11 @@ export default {
         audios = await $content("audios")
           .where({
             title: {
-              $eq: post.audios,
-            },
+              $eq: post.audios
+            }
           })
           .fetch();
-        audios = audios[0].audios;  
+        audios = audios[0].audios;
       } catch (e) {
         error({ message: "Audios not found" });
       }
@@ -112,18 +122,18 @@ export default {
         carousel = await $content("carousel")
           .where({
             title: {
-              $eq: post.carousel,
-            },
+              $eq: post.carousel
+            }
           })
           .fetch();
-        carousel = carousel[0].photos;  
+        carousel = carousel[0].photos;
       } catch (e) {
         error({ message: "Carousel not found" });
       }
     }
 
     // removing current post of author posts list
-    const index = await portfolio.findIndex((p) => p.date === post.date);
+    const index = await portfolio.findIndex(p => p.date === post.date);
     await portfolio.splice(index, 1);
 
     return {
@@ -131,9 +141,9 @@ export default {
       carousel,
       post,
       portfolio,
-      member,
+      member
     };
-  },
+  }
 };
 </script>
 
@@ -251,5 +261,44 @@ pre.description {
 .publication-audios {
   display: grid;
   grid-auto-flow: row;
+}
+
+.publication-carousel {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  :hover {
+    cursor: pointer;
+  }
+}
+
+.image-view {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 3;
+  background-color: rgba(204, 218, 220, 0.9);
+  display: grid;
+  grid-auto-columns: 1fr;
+  grid-auto-rows: 1fr;
+  place-items: center;
+  img.photo {
+    max-height: 100vh;
+    max-width: 100vw;
+    @media only screen and (max-width: 800px) {
+      width: 100%;
+    }
+  }
+  .close-icon {
+    width: 30px;
+    position: fixed;
+    top: 50px;
+    right: 50px;
+    &:hover {
+      cursor: pointer;
+    }
+  }
 }
 </style>
