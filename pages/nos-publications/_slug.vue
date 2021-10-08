@@ -74,7 +74,7 @@ export default {
     return {
       showDropdown: false,
       publicPath: process.env.baseUrl,
-      selection: ""
+      selection: null
     };
   },
   async asyncData({ $content, params, error }) {
