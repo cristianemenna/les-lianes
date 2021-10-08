@@ -17,12 +17,13 @@
         pre.description {{ post.description }}
         iframe(v-if="post.video", :src="post.video", allowfullscreen)
         .publication-audios(v-if="audios")
-          audio(
-            v-for="(audio, i) in audios"
-            controls
-            :key="i"
-            :src="audio.audio"
-          )
+          template(v-for="(audio, i) in audios")
+            span {{ audio.title }}
+            audio(
+              controls
+              :key="i"
+              :src="audio.audio"
+            )
         .publication-details(v-if="post.source")
           img(src="~/assets/icons/link-icon.svg")
           span A retrouver sur :
@@ -101,12 +102,12 @@ export default {
     }
 
     let audios;
-    if (post.audios) {
+    if (post.media) {
       try {
         audios = await $content("audios")
           .where({
             title: {
-              $eq: post.audios
+              $eq: post.media
             }
           })
           .fetch();
@@ -261,12 +262,17 @@ pre.description {
 .publication-audios {
   display: grid;
   grid-auto-flow: row;
+  grid-gap: 6px;
+  span {
+    font-weight: bold;
+  }
 }
 
 .publication-carousel {
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: center;
+  margin: 50px 0;
   :hover {
     cursor: pointer;
   }
