@@ -1,16 +1,17 @@
 <template lang="pug">
-  .scroll-to-top(v-if="visible " @click="scrollToTop")
-    img(src="~/assets/icons/back-to-top.svg" @click="$emit('click')")
+  .scroll-to-top(v-if="visible")
+    img(src="~/assets/icons/back-to-top.svg" @click="scrollingToTop")
 </template>
 
 <script lang="ts">
-import { Vue, Component } from "vue-property-decorator";
+import { Vue, Component } from "nuxt-property-decorator";
 
 @Component
 export default class ScrollToTop extends Vue {
   public visible = false;
 
   public mounted() {
+    console.log("mounted");
     window.addEventListener("scroll", this.scrollListener);
   }
 
@@ -26,7 +27,7 @@ export default class ScrollToTop extends Vue {
     }
   }
 
-  public scrollToTop() {
+  public scrollingToTop() {
     window.scrollTo({
       top: 0,
       behavior: "smooth"
