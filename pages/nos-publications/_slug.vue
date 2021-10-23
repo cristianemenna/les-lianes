@@ -28,59 +28,74 @@
           img(src="~/assets/icons/link-icon.svg")
           span A retrouver sur :
           a(:href="post.source", target="_blank") {{  post.sourceName ? post.sourceName : "Publication d'origine"  }}
-        .publication-carousel(v-if="carousel")
-          img(
-            v-for="(photo, i) in carousel"
-            :key="i"
-            :src="photo.photo"
-            :alt="photo.photoAlt"
-            @click="selection = photo"
-          )
+        .publication-carousel(v-if="carousel && carousel.length")
+          span coucou
+          span(v-for="item of carousel" @click="selection = { photoPath: item.photo } ") {{ item.photo }}
+          //- img(
+          //-   v-for="(item, i) in carousel"
+          //-   :key="i"
+          //-   :src="item.photo"
+          //-   :alt="item.photoAlt"
+          //-   @click="selection = item"
+          //- )
+        .test(v-if="selection")
+          span {{ selection }}
     .author-related-content(v-if="portfolio && portfolio.length")
       h2 Publications de la même autrice
       Portfolio(:portfolio="portfolio")
-  .image-view(v-if="selection")
-    img.close-icon(src="~/assets/icons/close.svg" @click="selection = ''")
-    img.photo(
-      :src="selection.photo"
-      :alt="selection.photoAlt"
-    )
+  //- .image-view(v-if="selection")
+  //-   img.close-icon(src="~/assets/icons/close.svg" @click="selection = null")
+  //-   img.photo(
+  //-     :src="selection.photo"
+  //-     :alt="selection.photoAlt"
+  //-   )
   ScrollToTop
   Footer
 </template>
 
-<script>
+<script lang="ts">
+import { Vue, Component } from "nuxt-property-decorator";
 import DropDownMenu from "../../components/drop-down-menu/DropDownMenu.vue";
 import Footer from "../../components/footer/Footer.vue";
 import Navbar from "../../components/navbar/Navbar.vue";
 import Portfolio from "../../components/portfolio/Portfolio.vue";
 import ScrollToTop from "../../components/scroll-to-top/ScrollToTop.vue";
+import Config from "../../nuxt.config";
 
-export default {
+Component.registerHooks(["asyncData"]);
+
+interface Selection {
+  photoPath: string;
+  photoAlt: string;
+}
+
+@Component({
   components: {
     DropDownMenu,
     Footer,
     Navbar,
     Portfolio,
     ScrollToTop
-  },
-  methods: {
-    formatDate(date) {
-      const options = { year: "numeric", month: "long", day: "numeric" };
-      return new Date(date).toLocaleDateString("fr", options);
-    }
-  },
-  data() {
-    return {
-      showDropdown: false,
-      publicPath: process.env.baseUrl,
-      selection: null
-    };
-  },
-  async asyncData({ $content, params, error }) {
-    let post;
-    let portfolio;
-    let member;
+  }
+})
+export default class SlugPublication extends Vue {
+  public showDropdown = false;
+  public publicPath = Config.env.baseUrl;
+  public selection = {} as Selection;
+
+  public formatDate(date: string) {
+    const options = { year: "numeric", month: "long", day: "numeric" } as any;
+    return new Date(date).toLocaleDateString("fr", options);
+  }
+
+  public test(s: any) {
+    console.log("cliqué");
+  }
+
+  public async asyncData({ $content, params, error }: any) {
+    let post: any;
+    let portfolio: any;
+    let member: any;
     try {
       post = await $content("portfolio", params.slug).fetch();
       member = await $content("collective")
@@ -118,7 +133,7 @@ export default {
     }
 
     let carousel;
-    if (post.carousel) {
+    if (post && post.carousel) {
       try {
         carousel = await $content("carousel")
           .where({
@@ -134,7 +149,7 @@ export default {
     }
 
     // removing current post of author posts list
-    const index = await portfolio.findIndex(p => p.date === post.date);
+    const index = await portfolio.findIndex((p: any) => p.date === post.date);
     await portfolio.splice(index, 1);
 
     return {
@@ -145,7 +160,7 @@ export default {
       member
     };
   }
-};
+}
 </script>
 
 <style lang="less" scoped>

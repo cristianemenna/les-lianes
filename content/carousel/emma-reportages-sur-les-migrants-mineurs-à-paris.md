@@ -1,5 +1,5 @@
 ---
-title: Emma - Reportages sur les migrants mineurs à Paris
+title: 'Emma - Reportages sur les migrants mineurs à Paris'
 photos:
   - photo: /img/migrants_mineurs_paris-1.jpg
     photoAlt: image de journal

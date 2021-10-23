@@ -11,7 +11,6 @@ export default class ScrollToTop extends Vue {
   public visible = false;
 
   public mounted() {
-    console.log("mounted");
     window.addEventListener("scroll", this.scrollListener);
   }
 
