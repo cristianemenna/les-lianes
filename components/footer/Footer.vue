@@ -41,7 +41,7 @@ ul {
   li {
     list-style: none;
     &:first-of-type {
-      font-family: 'Raleway Bold';
+      font-family: 'Raleway';
     }
   }
 }

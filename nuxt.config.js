@@ -12,13 +12,24 @@ export default {
       { hid: 'description', name: 'description', content: 'Les Lianes est un collectif de journalistes et de photographes. Rendez-vous sur notre site pour découvrir notre travail, retrouver nos articles et photos et apprendre à nous connaître.' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      {
+        rel: 'stylesheet',
+        href: 'https://fonts.googleapis.com/css2?family=Noto+Sans'
+      },
+      {
+        rel: 'stylesheet',
+        href: 'https://fonts.googleapis.com/css2?family=Raleway'
+      },
+      {
+        rel: 'stylesheet',
+        href: 'https://fonts.googleapis.com/css2?family=Raleway:wght@700&display=swap'
+      },
     ]
   },
 
   css: [
     '@/assets/less/commons.less',
-    '@/assets/less/fonts.less',
   ],
 
   loading: '~/components/loading/Loader.vue',
@@ -33,6 +44,7 @@ export default {
 
   buildModules: [
     '@nuxt/typescript-build',
+    '@nuxtjs/google-fonts'
   ],
 
   modules: [

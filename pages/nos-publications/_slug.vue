@@ -240,7 +240,7 @@ export default class SlugPublication extends Vue {
 pre.description {
   white-space: pre-wrap;
   text-align: justify;
-  font-family: "Noto" !important;
+  font-family: "Noto sans" !important;
   margin: 30px 0;
 }
 

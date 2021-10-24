@@ -108,7 +108,7 @@ export default {
     p {
       text-align: justify;
       &.member-role {
-        font-family: "Raleway Bold";
+        font-family: "Raleway";
         font-style: italic;
       }
       &.member-presentation {

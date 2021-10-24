@@ -127,7 +127,7 @@ export default {
 pre {
   white-space: pre-wrap;
   text-align: justify;
-  font-family: "Noto" !important;
+  font-family: "Noto sans" !important;
   white-space: pre-line;
 }
 </style>

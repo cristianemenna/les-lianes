@@ -117,7 +117,7 @@ export default class Index extends Vue {
   text-align: center;
   h1 {
     color: #000000;
-    font-family: "Raleway Bold";
+    font-family: "Raleway";
     font-size: 27px;
     filter: brightness(7.9);
   }
