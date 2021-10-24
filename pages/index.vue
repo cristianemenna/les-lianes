@@ -14,7 +14,6 @@
 import { Vue, Component } from "nuxt-property-decorator";
 import DropDownMenu from "../components/drop-down-menu/DropDownMenu.vue";
 import Navbar from "../components/navbar/Navbar.vue";
-import Footer from "../components/footer/Footer.vue";
 
 Component.registerHooks(["asyncData"]);
 

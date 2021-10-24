@@ -1,7 +1,7 @@
 <template>
   <div class="main">
     <div class="container">
-      <img id="logo" src="~/assets/img/logo.png" />
+      <img id="logo" src="~/assets/img/logo.png" alt="logo"/>
       <div v-if="error.statusCode === 404">
         <h1>Page inexistante</h1>
         <p>Cette page n'existe pas sur notre site</p>

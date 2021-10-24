@@ -4,13 +4,13 @@
       ul
         li
           a(href="/")
-            img(id="logo" src="~/assets/img/logo.png")
+            img(id="logo" src="~/assets/img/logo.png" alt="logo")
         li
           a(href="/nos-publications" :class="{ selected : portfolio }") Nos publications
         li
           a(href="/le-collectif" :class="{ selected : collective }") Qui sommes-nous ?
         li(@click="opened = !opened, $emit('click', opened)")
-          img(src="~/assets/icons/menu-icon.svg")
+          img(src="~/assets/icons/menu-icon.svg" alt="picto du menu")
 </template>
 
 <script lang="ts">

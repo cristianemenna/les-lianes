@@ -1,6 +1,6 @@
 <template lang="pug">
   .scroll-to-top(v-if="visible")
-    img(src="~/assets/icons/back-to-top.svg" @click="scrollingToTop")
+    img(src="~/assets/icons/back-to-top.svg" @click="scrollingToTop" alt="revenir au début")
 </template>
 
 <script lang="ts">

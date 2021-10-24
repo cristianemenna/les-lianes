@@ -15,15 +15,7 @@ export default {
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
       {
         rel: 'stylesheet',
-        href: 'https://fonts.googleapis.com/css2?family=Noto+Sans'
-      },
-      {
-        rel: 'stylesheet',
-        href: 'https://fonts.googleapis.com/css2?family=Raleway'
-      },
-      {
-        rel: 'stylesheet',
-        href: 'https://fonts.googleapis.com/css2?family=Raleway:wght@700&display=swap'
+        href: 'https://fonts.googleapis.com/css2?family=Noto+Sans&family=Raleway:wght@700&display=swap'
       },
     ]
   },
@@ -44,7 +36,6 @@ export default {
 
   buildModules: [
     '@nuxt/typescript-build',
-    '@nuxtjs/google-fonts'
   ],
 
   modules: [

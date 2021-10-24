@@ -11,7 +11,7 @@
           p.member-role {{ member.role }}
           p.member-presentation {{ member.description }}
           .contact
-            img(src="~/assets/icons/mail-icon.svg")
+            img(src="~/assets/icons/mail-icon.svg" alt="picto de courrier électronique")
             p Contact : {{ member.email }}
       .member-portfolio
         Portfolio(:portfolio="portfolio")

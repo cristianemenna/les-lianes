@@ -4,7 +4,7 @@
     DropDownMenu(v-if="showDropdown")
     .main-container(:class="{ overlay : showDropdown }")
       .collective-container
-        img(:src="photo")
+        img(:src="photo" alt="image de fond")
         .collective-container-content
           template(v-for="text of texts")
             h2 {{ text.title }}

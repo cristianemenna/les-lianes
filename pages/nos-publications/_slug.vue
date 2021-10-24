@@ -23,7 +23,7 @@
               :src="audio.audio"
             )
         .publication-details(v-if="post.source")
-          img(src="~/assets/icons/link-icon.svg")
+          img(src="~/assets/icons/link-icon.svg" alt="picto de lien")
           span A retrouver sur :
           a(:href="post.source", target="_blank") {{  post.sourceName ? post.sourceName : "Publication d'origine"  }}
         #publication-carousel(v-if="carousel && carousel.length")
