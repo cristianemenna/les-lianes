@@ -28,33 +28,22 @@
           img(src="~/assets/icons/link-icon.svg")
           span A retrouver sur :
           a(:href="post.source", target="_blank") {{  post.sourceName ? post.sourceName : "Publication d'origine"  }}
-        .publication-carousel(v-if="carousel && carousel.length")
-          span coucou
-          span(v-for="item of carousel" @click="selection = { photoPath: item.photo } ") {{ item.photo }}
-          //- img(
-          //-   v-for="(item, i) in carousel"
-          //-   :key="i"
-          //-   :src="item.photo"
-          //-   :alt="item.photoAlt"
-          //-   @click="selection = item"
-          //- )
-        .test(v-if="selection")
-          span {{ selection }}
+        #publication-carousel(v-if="carousel && carousel.length")
+          a(v-for="(item, i) in carousel" :href="item.photo" aria-label="portfolio d'images")
+            img.test(
+              :key="i"
+              :src="item.photo"
+              :alt="item.photoAlt"
+            )
     .author-related-content(v-if="portfolio && portfolio.length")
       h2 Publications de la même autrice
       Portfolio(:portfolio="portfolio")
-  //- .image-view(v-if="selection")
-  //-   img.close-icon(src="~/assets/icons/close.svg" @click="selection = null")
-  //-   img.photo(
-  //-     :src="selection.photo"
-  //-     :alt="selection.photoAlt"
-  //-   )
   ScrollToTop
   Footer
 </template>
 
 <script lang="ts">
-import { Vue, Component } from "nuxt-property-decorator";
+import { Component, Vue } from "nuxt-property-decorator";
 import DropDownMenu from "../../components/drop-down-menu/DropDownMenu.vue";
 import Footer from "../../components/footer/Footer.vue";
 import Navbar from "../../components/navbar/Navbar.vue";
@@ -88,8 +77,12 @@ export default class SlugPublication extends Vue {
     return new Date(date).toLocaleDateString("fr", options);
   }
 
-  public test(s: any) {
-    console.log("cliqué");
+  public mounted() {
+    const el = document.getElementById("publication-carousel");
+    //@ts-ignore
+    window.lightGallery(el, {
+      thumbnail: true
+    });
   }
 
   public async asyncData({ $content, params, error }: any) {
@@ -283,46 +276,26 @@ pre.description {
   }
 }
 
-.publication-carousel {
+#publication-carousel {
+  // display: grid;
+  // grid-template-columns: 1fr 1fr;
+  // grid-gap: 15px;
+  // margin: 50px 0;
+  // :hover {
+  //   cursor: pointer;
+  // }
+  // @media only screen and (max-width: 800px) {
+  //   grid-template-columns: 1fr;
+  // }
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-gap: 15px;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 10px;
   margin: 50px 0;
-  :hover {
-    cursor: pointer;
-  }
-  @media only screen and (max-width: 800px) {
-    grid-template-columns: 1fr;
-  }
-}
-
-.image-view {
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: 3;
-  background-color: rgba(204, 218, 220, 0.9);
-  display: grid;
-  grid-auto-columns: 1fr;
-  grid-auto-rows: 50px auto;
-  place-items: center;
-  img.photo {
-    max-height: 100vh - 15%;
-    max-width: 100vw;
-    @media only screen and (max-width: 800px) {
-      width: 100%;
-    }
-  }
-  .close-icon {
-    width: 25px;
-    place-self: end;
-    align-self: end;
-    margin-right: 30px;
-    &:hover {
-      cursor: pointer;
-    }
+  img {
+    width: 200px;
+    height: 180px;
+    object-fit: cover;
+    box-shadow: 1px 1px 4px 1px rgba(0, 0, 0, 0.2);
   }
 }
 </style>

@@ -39,6 +39,10 @@ export default {
     '@nuxt/content'
   ],
 
+  plugins: [
+    { src: '~/plugins/lightgallery.client.js' }
+  ],
+
   server: {
     // host: '192.168.1.13',
     port: 4000,
