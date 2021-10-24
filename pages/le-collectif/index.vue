@@ -110,6 +110,9 @@ export default {
   grid-gap: 50px;
   align-items: center;
   text-align: justify;
+  h1, h2 {
+    color: #000000;
+  }
   @media only screen and (max-width: 800px) {
     grid-auto-flow: row;
     grid-template-columns: 1fr;
@@ -118,7 +121,6 @@ export default {
   img {
     width: 100%;
     box-shadow: 1px 1px 4px 1px rgba(0, 0, 0, 0.2);
-    border-radius: 10px;
   }
 }
 

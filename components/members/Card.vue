@@ -27,7 +27,6 @@ export default class Card extends Vue {}
   grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
   grid-gap: 10px;
   padding: 10px;
-  border-radius: 10px;
   box-shadow: 1px 1px 4px 1px rgba(0, 0, 0, 0.2);
   @media only screen and (max-width: 800px) {
     grid-template-columns: 1fr;

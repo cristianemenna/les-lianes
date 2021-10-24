@@ -12,8 +12,6 @@
           a(:href="publicPath + '/le-collectif/' + member[0].slug")
             img.avatar(:src="member[0].avatar", :alt="member[0].avatarAlt")
             span {{ post.author }}
-          span.separator ⸱
-          span.date {{ formatDate(post.date) }}
         pre.description {{ post.description }}
         iframe(v-if="post.video", :src="post.video", allowfullscreen)
         .publication-audios(v-if="audios")
@@ -71,11 +69,6 @@ export default class SlugPublication extends Vue {
   public showDropdown = false;
   public publicPath = Config.env.baseUrl;
   public selection = {} as Selection;
-
-  public formatDate(date: string) {
-    const options = { year: "numeric", month: "long", day: "numeric" } as any;
-    return new Date(date).toLocaleDateString("fr", options);
-  }
 
   public mounted() {
     const el = document.getElementById("publication-carousel");
@@ -264,6 +257,7 @@ pre.description {
   h2 {
     font-size: 20px;
     margin: 50px 0;
+    color: #000000;
   }
 }
 
@@ -277,25 +271,23 @@ pre.description {
 }
 
 #publication-carousel {
-  // display: grid;
-  // grid-template-columns: 1fr 1fr;
-  // grid-gap: 15px;
-  // margin: 50px 0;
-  // :hover {
-  //   cursor: pointer;
-  // }
-  // @media only screen and (max-width: 800px) {
-  //   grid-template-columns: 1fr;
-  // }
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-gap: 10px;
   margin: 50px 0;
+  @media only screen and (max-width: 800px) {
+    grid-template-columns: unset;
+    grid-row-gap: 10px;
+    place-items: center;
+  }
   img {
     width: 200px;
     height: 180px;
     object-fit: cover;
     box-shadow: 1px 1px 4px 1px rgba(0, 0, 0, 0.2);
+    @media only screen and (max-width: 800px) {
+      width: 80vw;
+    }
   }
 }
 </style>
