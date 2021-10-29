@@ -48,6 +48,7 @@ export default {
             $eq: member.fullName
           }
         })
+        .sortBy("date")
         .fetch();
     } catch (e) {
       error({ message: e });
