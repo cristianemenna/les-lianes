@@ -97,7 +97,7 @@ export default class SlugPublication extends Vue {
             $eq: post.author
           }
         })
-        .sortBy('date')
+        .sortBy('date', 'desc')
         .fetch();
     } catch (e) {
       error({ message: "Post not found" });

@@ -22,7 +22,7 @@ export default {
   async asyncData({ $content, params, error }) {
     let portfolio;
     try {
-      portfolio = await $content("portfolio").sortBy('date').fetch();
+      portfolio = await $content("portfolio").sortBy('date', 'desc').fetch();
     } catch (e) {
       error({ message: "Portfolio not found" });
     }

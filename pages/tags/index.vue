@@ -28,7 +28,7 @@ export default {
     let portfolio;
     let tags;
     try {
-      portfolio = await $content("portfolio").sortBy('date').fetch();
+      portfolio = await $content("portfolio").sortBy('date', 'desc').fetch();
       tags = await $content("tags").fetch();
     } catch (e) {
       error({ message: "Not found" });
