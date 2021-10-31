@@ -28,14 +28,14 @@
           a(:href="post.source", target="_blank") {{  post.sourceName ? post.sourceName : "Publication d'origine"  }}
         #publication-carousel(v-if="carousel && carousel.length")
           a(v-for="(item, i) in carousel" :href="item.photo" aria-label="portfolio d'images")
-            img.test(
+            img(
               :key="i"
               :src="item.photo"
               :alt="item.photoAlt"
             )
     .author-related-content(v-if="portfolio && portfolio.length")
       h2 Publications de la même autrice
-      Portfolio(:portfolio="portfolio")
+      Portfolio(:portfolio="portfolio" :slug="true")
   ScrollToTop
   Footer
 </template>

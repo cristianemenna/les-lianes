@@ -1,14 +1,13 @@
 <template lang="pug">
   .portfolio-wrapper
-    template(v-for="itemIndex in itemsToShow")
-      template(v-if="itemIndex <= portfolio.length")
-        .portfolio-item
-          a(:href="'/nos-publications/' + portfolio[itemIndex - 1].slug")
-            img(:src="portfolio[itemIndex -1].image")
-          Tags(:tags="portfolio[itemIndex -1].tag" link)
-          a(:href="'/nos-publications/' + portfolio[itemIndex - 1].slug")
-            p {{ portfolio[itemIndex -1].title }}
-    .showMore(v-if="itemsToShow < portfolio.length" @click="itemsToShow += 3") Voir plus
+    template(v-for="item of portfolioItems")
+      .portfolio-item
+        a(:href="'/nos-publications/' + item.slug")
+          img(:src="item.image")
+        Tags(:tags="item.tag" link)
+        a(:href="'/nos-publications/' + item.slug")
+          p {{ item.title }}
+    .showMore(v-if="itemsToShow <= portfolio.length" @click="itemsToShow += 3") Voir plus
 </template>
 
 <script lang="ts">
@@ -24,12 +23,22 @@ export default class Portfolio extends Vue {
   @Prop({ required: true })
   public portfolio!: any[];
 
+  @Prop({ default: false })
+  public slug!: boolean;
   public itemsToShow = 9;
 
   public created() {
     if (this.portfolio.length < this.itemsToShow) {
       this.itemsToShow = this.portfolio.length;
     }
+  }
+
+  get portfolioItems() {
+    if (!this.slug) {
+      return this.portfolio.filter((item, index) => index < this.itemsToShow);
+    }
+    this.itemsToShow = this.portfolio.length + 1;
+    return this.portfolio;
   }
 }
 </script>
