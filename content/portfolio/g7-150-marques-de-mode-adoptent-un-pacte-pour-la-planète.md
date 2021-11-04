@@ -40,7 +40,9 @@ description: >-
 
   Texte : Marilou Therre
 image: /img/marché_missebo1.jpg
-imageCredit: Marion Vercelot/SIPA
+imageCredit: Les collines du marché de Dantokpa, au Bénin, sont constituées de
+  déchets de vêtements en provenance d'Europe. Un exemple de l'impact
+  environnemental considérable de l'industrie textile. Marion Vercelot/SIPA
 imageAlt: "Déchets textiles qui forment une colline sur les bords de la lagune
   de Cotonou. "
 source: https://www.parismatch.com/Actu/Economie/G7-150-marques-de-mode-adoptent-un-pacte-pour-la-planete-1643177
