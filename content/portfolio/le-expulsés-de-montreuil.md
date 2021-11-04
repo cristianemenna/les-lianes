@@ -16,7 +16,7 @@ imageAlt: "Une enfilade de tente sur le trottoir qui borde l'immeuble des
   expulsés. Des sans papiers debout dans le froid. "
 source: https://www.streetpress.com/sujet/1511972218-montreuil-sans-pap-expulses-municipalite-habitants-solidaires
 sourceName: Street Press
-carousel: Les expulsés de Montreuil
+carousel: Marion - Les expulsés de Montreuil
 author: Marion Vercelot
 tag:
   - Société
