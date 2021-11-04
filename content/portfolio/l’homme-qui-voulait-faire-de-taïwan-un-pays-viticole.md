@@ -23,5 +23,4 @@ carousel: Marion - L’homme qui voulait faire de Taïwan un pays viticole
 author: Marion Vercelot
 tag:
   - International
-  - France
 ---
