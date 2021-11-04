@@ -8,6 +8,9 @@ description: >-
 
 
   {...}
+
+
+  Texte : Han Cheung
 image: /img/mv-taipeitimes_1.jpg
 imageCredit: Marion Vercelot
 imageAlt: Chen Chien-hao sent les arômes de son vin dans son entrepôt.
