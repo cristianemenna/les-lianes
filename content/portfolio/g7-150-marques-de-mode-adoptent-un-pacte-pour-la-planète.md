@@ -45,6 +45,7 @@ imageAlt: "Déchets textiles qui forment une colline sur les bords de la lagune
   de Cotonou. "
 source: https://www.parismatch.com/Actu/Economie/G7-150-marques-de-mode-adoptent-un-pacte-pour-la-planete-1643177
 sourceName: Paris Match
+carousel: "Marion - G7 : 150 marques de mode adoptent un pacte pour la planète"
 author: Marion Vercelot
 avatarAlt: déchets-textiles
 tag:
