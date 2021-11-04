@@ -36,6 +36,9 @@ description: >-
 
 
   Francois-Henri Pinault présentera le Fashion Pact au G7 lundi matin.
+
+
+  Texte : Marilou Therre
 image: /img/marché_missebo1.jpg
 imageCredit: Marion Vercelot/SIPA
 imageAlt: "Déchets textiles qui forment une colline sur les bords de la lagune
