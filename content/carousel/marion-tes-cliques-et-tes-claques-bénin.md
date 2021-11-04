@@ -8,5 +8,5 @@ photos:
   - photo: /img/mv_radiocampus_4.jpg
     photoAlt: "Garçon debout sur un bateau près de Sa-Ava sur la lac Nokué. "
   - photo: /img/mv_radiocampus_5.jpg
-    photoAlt: "Plat béninois. "
+    photoAlt: "Akassa et porc grillé. Plat béninois. "
 ---
