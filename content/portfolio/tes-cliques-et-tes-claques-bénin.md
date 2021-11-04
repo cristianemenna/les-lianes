@@ -11,7 +11,7 @@ description: >-
   le Bénin, le Ghana, l’Ouganda, le Kenya, le Rwanda et la Tanzanie.
 
 
-  Texte et émission de Radio : Inès Edel-Garcia. 
+  Texte et émission de radio : Inès Edel-Garcia. 
 image: /img/mv_radiocampus_1.jpg
 imageCredit: Marion Vercelot
 imageAlt: "Des hommes de la cour du pontife de Ouidah déambulent dans la ville
