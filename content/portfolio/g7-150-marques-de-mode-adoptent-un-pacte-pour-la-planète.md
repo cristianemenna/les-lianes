@@ -1,6 +1,6 @@
 ---
 title: "G7 : 150 marques de mode adoptent un pacte pour la planète"
-date: 2021-09-19T14:21:24.110Z
+date: 2019-07-31T14:21:24.110Z
 description: >-
   Le P-DG du groupe Kering a été missionné par le président de la République
   pour rallier les grands noms du
