@@ -1,6 +1,6 @@
 ---
 title: Vino Formosa comes of age
-date: 2021-11-04T09:54:30.884Z
+date: 2019-08-03T08:54:30.884Z
 description: >-
   Taichung’s Vino Formosa continues to rack up accolades with two golds earlier
   this month — and its winemaker has his sights set on recreating Taiwanese
