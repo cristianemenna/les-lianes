@@ -1,6 +1,6 @@
 ---
 title: Les préparatifs de la pride de Taipei
-date: 2021-11-04T12:26:33.736Z
+date: 2019-08-14T11:26:33.736Z
 description: >-
   Le 26 octobre, Taipei organise sa première marche des fiertés depuis la
   légalisation du mariage pour les personnes du même sexe, une première en Asie.
