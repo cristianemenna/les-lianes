@@ -8,6 +8,7 @@
           .main-presentation
             h1 COLLECTIF LES LIANES
             p {{ text.homeIntroduction }}
+            p.lien Entrer
 </template>
 
 <script lang="ts">
@@ -123,6 +124,12 @@ export default class Index extends Vue {
   p {
     margin: 25px 0;
     font-size: 16px;
+  }
+  .lien {
+    color: #228780;
+    &:hover {
+      text-decoration: underline;
+    }
   }
   @media only screen and (max-width: 800px) {
     background-color: rgba(255, 255, 255, 0.7);
