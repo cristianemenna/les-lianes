@@ -1,6 +1,6 @@
 ---
 title: "Théologie de la libération : l’église catholique et le conflit basque"
-date: 2021-11-04T15:20:08.425Z
+date: 2019-08-30T14:20:08.425Z
 description: >-
   Ce n’est plus un secret pour personne : l’Église catholique a joué un rôle
   important tout au long du conflit basque, des deux côtés de la frontière. Ce
