@@ -1,6 +1,6 @@
 ---
 title: Photoreportage à la Taipei Pride
-date: 2021-11-04T14:49:45.049Z
+date: 2019-09-19T13:49:45.049Z
 description: >-
   Par son ampleur inédite, la 17ème édition de la Taiwan Pride, organisée le 26
   octobre dernier, marque l’année de la légalisation du mariage pour tous, une
