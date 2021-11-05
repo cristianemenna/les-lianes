@@ -1,6 +1,6 @@
 ---
 title: Tes cliques et tes claques Bénin
-date: 2021-11-04T10:27:04.816Z
+date: 2019-05-30T09:27:00.000Z
 description: >-
   Ce mois-ci, on part au Bénin, ce petit pays d’Afrique de l’Ouest baptisé
   jusqu’en 1974 “Dahomey”. Coincé entre le Togo, le Burkina Faso, le Niger et le
