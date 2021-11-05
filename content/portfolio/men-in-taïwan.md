@@ -1,6 +1,6 @@
 ---
 title: Men In Taïwan
-date: 2021-11-04T14:09:29.210Z
+date: 2019-09-03T13:09:29.210Z
 description: >
   À Taipei, la capitale taïwanaise, la 17e édition de la Taiwan Pride célèbre
   cette année la légalisation du mariage pour tous. Une première en Asie. Les
