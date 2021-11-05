@@ -1,6 +1,6 @@
 ---
 title: "Elections à Taïwan: la Chine pèse comme une épée de Damoclès"
-date: 2021-11-04T10:43:05.258Z
+date: 2019-06-01T09:43:05.258Z
 description: >-
   Opposée à toute unification, la présidente Tsai Ing-wen entretient des
   relations tendues avec Pékin, quand le parti nationaliste plaide pour une
