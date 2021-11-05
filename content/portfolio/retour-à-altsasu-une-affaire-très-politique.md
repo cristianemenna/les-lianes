@@ -1,6 +1,6 @@
 ---
 title: Retour à Altsasu, une affaire très politique
-date: 2021-11-04T15:06:25.005Z
+date: 2019-09-30T14:06:25.005Z
 description: >-
   Au commencent : un fait divers. Une bagarre nocturne éclate dans un bar entre
   quelques jeunes et deux membres, hors service, de la Guardia Civil espagnole —
