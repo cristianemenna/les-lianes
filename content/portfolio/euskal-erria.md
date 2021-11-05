@@ -1,6 +1,6 @@
 ---
 title: Euskal Erria
-date: 2021-11-05T12:20:06.219Z
+date: 2019-07-01T11:20:06.219Z
 description: >-
   Dos años después de su disolución, quedan 230 presos de ETA expuestos a una
   política de dispersión por el territorio español y francés. La sociedad vasca
