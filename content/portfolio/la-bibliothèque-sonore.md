@@ -1,6 +1,6 @@
 ---
 title: La bibliothèque sonore
-date: 2021-11-04T11:21:11.492Z
+date: 2019-07-24T10:21:11.492Z
 description: >
   La bibliothèque Sonore, une association de Montreuil, enregistre romans,
   essais et manuels scolaires et les mettent à disposition des personnes «
